@@ -1,116 +1,106 @@
 /* css/style.css */
 
-/* --- CSS Variables for Light/Dark Mode & Theme --- */
+/* --- Import Recommended Tech/Futuristic Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
+
+/* --- CSS Variables for Tech Theme Color Schemes --- */
 :root {
-    /* Light Mode Defaults */
-    --bg-color: #ffffff;
-    --text-color: #4a5568; /* Slightly softer text */
-    --heading-color: #2d3748; /* Darker headings */
-    --primary-color: #3182ce; /* A pleasant blue */
-    --secondary-color: #4c51bf; /* A complementary indigo */
-    --navbar-bg: #ffffff; /* Light navbar */
-    --navbar-link-color: #4a5568;
-    --navbar-link-hover-color: #3182ce; /* Hover uses primary color */
-    --section-light-bg: #edf2f7; /* Light gray section */
-    --section-dark-bg: #e2e8f0; /* Slightly darker gray */
-    --card-bg: #ffffff;
-    --card-shadow: rgba(0, 0, 0, 0.1);
-    --testimonial-card-bg: #ffffff;
-    --testimonial-card-shadow: rgba(0, 0, 0, 0.08);
-    --footer-bg: #2d3748; /* Dark blue-gray footer */
-    --footer-text-color: #a0aec0; /* Light gray text */
+    /* Default Scheme: Neon Blue/Cyan */
+    --bg-color: #0a0a0a;           /* Very dark almost black */
+    --text-color: #e0e0e0;         /* Light gray for main text */
+    --heading-color: #ffffff;     /* White for headings */
+    --primary-color: #00ffff;      /* Neon Cyan */
+    --secondary-color: #00bfff;    /* Neon Blue */
+    --navbar-bg: #1c1c1c;         /* Slightly lighter dark for navbar */
+    --navbar-link-color: #e0e0e0;
+    --navbar-link-hover-color: var(--primary-color); /* Hover uses primary */
+    --section-light-bg: #1a1a1a;  /* Dark background for light sections */
+    --section-dark-bg: #2a2a2a;   /* Slightly darker for dark sections */
+    --card-bg: #1a1a1a;           /* Card background */
+    --card-shadow-color: rgba(0, 255, 255, 0.2); /* Shadow matches primary glow */
+    --testimonial-card-bg: #2a2a2a; /* Slightly different card bg */
+    --testimonial-card-shadow-color: rgba(0, 191, 255, 0.2); /* Shadow matches secondary glow */
+    --footer-bg: #0a0a0a;         /* Match body background */
+    --footer-text-color: #a0a0a0; /* Muted text for footer */
+    --footer-link-hover-color: white;
 
     /* Hero specific styles */
     --hero-text-color: #ffffff;
-    --hero-overlay-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    --hero-overlay-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
 
     /* Button Specific Colors */
     --btn-primary-bg: var(--primary-color);
-    --btn-primary-text: white;
+    --btn-primary-text: var(--bg-color); /* Dark text on neon */
     --btn-secondary-border: var(--secondary-color);
     --btn-secondary-text: var(--secondary-color);
     --btn-secondary-hover-bg: var(--secondary-color);
-    --btn-secondary-hover-text: white;
+    --btn-secondary-hover-text: var(--bg-color);
+
+    /* Outline Button Specific Colors */
      --btn-outline-border: var(--primary-color);
      --btn-outline-text: var(--primary-color);
      --btn-outline-hover-bg: var(--primary-color);
-     --btn-outline-hover-text: white;
+     --btn-outline-hover-text: var(--bg-color);
      --btn-primary-outline-border: var(--primary-color); /* Custom outline */
      --btn-primary-outline-text: var(--primary-color);
      --btn-primary-outline-hover-bg: var(--primary-color);
-     --btn-primary-outline-hover-text: white;
+     --btn-primary-outline-hover-text: var(--bg-color);
 
       /* Toggle Button Colors */
-      --toggle-btn-bg: rgba(128, 128, 128, 0.2);
-      --toggle-btn-border: rgba(255, 255, 255, 0.4);
-      --toggle-btn-color: white;
-      --toggle-btn-active-bg: white;
-      --toggle-btn-active-color: var(--dark-color, #2d3748); /* Use a dark color for text */
+      --toggle-btn-bg: rgba(255, 255, 255, 0.1);
+      --toggle-btn-border: rgba(255, 255, 255, 0.3);
+      --toggle-btn-color: var(--primary-color);
+      --toggle-btn-active-bg: var(--primary-color);
+      --toggle-btn-active-color: var(--bg-color); /* Dark text on active neon */
 }
 
-/* Dark Mode Variables - Overrides */
-body.dark-mode {
-    --bg-color: #1a202c; /* Dark background */
-    --text-color: #e2e8f0; /* Light text */
-    --heading-color: #ffffff; /* White headings */
-    --primary-color: #9f7aea; /* Purple accent for dark mode */
-    --secondary-color: #63b3ed; /* Light blue secondary */
-    --navbar-bg: #2d3748; /* Darker navbar */
-    --navbar-link-color: #e2e8f0;
-    --navbar-link-hover-color: #9f7aea; /* Hover uses dark mode primary */
-    --section-light-bg: #2d3748; /* Dark background for light sections */
-    --section-dark-bg: #4a5568; /* Slightly lighter dark */
-    --card-bg: #2d3748; /* Dark card background */
-    --card-shadow: rgba(0, 0, 0, 0.4);
-    --testimonial-card-bg: #4a5568; /* Slightly different dark for testimonials */
-    --testimonial-card-shadow: rgba(0, 0, 0, 0.5);
-    --footer-bg: #1a202c; /* Match body background */
-    --footer-text-color: #a0aec0;
+/* Alternate Scheme: Neon Purple/Magenta (Applied when body has 'scheme-alt' class) */
+body.scheme-alt {
+    --primary-color: #ff00ff; /* Neon Magenta */
+    --secondary-color: #8a2be2; /* Blue Violet */
+    --card-shadow-color: rgba(255, 0, 255, 0.2); /* Shadow matches primary glow */
+    --testimonial-card-shadow-color: rgba(138, 43, 226, 0.2); /* Shadow matches secondary glow */
 
-    --hero-text-color: #ffffff;
-    --hero-overlay-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
-
-    /* Button Specific Colors (Dark Mode) */
     --btn-primary-bg: var(--primary-color);
-    --btn-primary-text: #1a202c; /* Dark text on light accent */
+    --btn-primary-text: var(--bg-color);
     --btn-secondary-border: var(--secondary-color);
     --btn-secondary-text: var(--secondary-color);
     --btn-secondary-hover-bg: var(--secondary-color);
-    --btn-secondary-hover-text: #1a202c;
-    --btn-outline-border: var(--primary-color);
-    --btn-outline-text: var(--primary-color);
-    --btn-outline-hover-bg: var(--primary-color);
-    --btn-outline-hover-text: #1a202c;
+    --btn-secondary-hover-text: var(--bg-color);
+
+     --btn-outline-border: var(--primary-color);
+     --btn-outline-text: var(--primary-color);
+     --btn-outline-hover-bg: var(--primary-color);
+     --btn-outline-hover-text: var(--bg-color);
      --btn-primary-outline-border: var(--primary-color);
      --btn-primary-outline-text: var(--primary-color);
      --btn-primary-outline-hover-bg: var(--primary-color);
-     --btn-primary-outline-hover-text: #1a202c;
+     --btn-primary-outline-hover-text: var(--bg-color);
 
-     /* Toggle Button Colors (Dark Mode) */
-     --toggle-btn-bg: rgba(255, 255, 255, 0.1);
-     --toggle-btn-border: rgba(255, 255, 255, 0.3);
-     --toggle-btn-color: #e2e8f0;
+     --toggle-btn-color: var(--primary-color);
      --toggle-btn-active-bg: var(--primary-color);
-     --toggle-btn-active-color: #1a202c;
+     --toggle-btn-active-color: var(--bg-color);
 }
 
 
 /* --- Base Styles --- */
 body {
-    font-family: var(--body-font); /* Apply body font */
-    line-height: 1.7;
+    font-family: 'Rajdhani', sans-serif; /* Applied body font */
+    line-height: 1.8; /* Increased line height for readability */
     color: var(--text-color);
     background-color: var(--bg-color);
-    padding-top: 64px; /* Adjust based on navbar height */
+    padding-top: 72px; /* Adjusted based on navbar height */
     overflow-x: hidden;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font); /* Apply heading font */
+    font-family: 'Orbitron', sans-serif; /* Applied heading font */
     color: var(--heading-color);
-    line-height: 1.3;
+    line-height: 1.4; /* Adjusted line height */
     margin-bottom: 1rem;
+    text-transform: uppercase; /* Uppercase headings for tech feel */
 }
 
 p {
@@ -118,91 +108,88 @@ p {
 }
 
 a {
-    color: var(--primary-color);
+    color: var(--primary-color); /* Default link color */
     text-decoration: none;
     transition: color 0.3s ease-in-out;
 }
 a:hover {
-    color: var(--secondary-color);
+    color: var(--secondary-color); /* Default link hover color */
     text-decoration: underline;
 }
 
-.container { /* Override default Tailwind container behavior if needed */
-    max-width: 1200px; /* Set a max-width for larger screens */
+.container {
+    max-width: 1200px;
 }
 
 
 /* --- Navbar Styling --- */
 .bg-dark-navbar {
      background-color: var(--navbar-bg);
-     backdrop-filter: blur(8px); /* Frosted glass effect (modern) */
-     background-color: rgba(var(--navbar-bg-rgb, 52, 58, 64), 0.9); /* Semi-transparent with fallback */
+     backdrop-filter: blur(10px); /* Stronger frosted glass */
+     background-color: rgba(var(--navbar-bg-rgb, 28, 28, 28), 0.8); /* Semi-transparent with fallback */
      /* Need JS to update --navbar-bg-rgb based on mode toggle */
 }
-body.dark-mode .bg-dark-navbar {
-     background-color: rgba(var(--navbar-bg-rgb, 30, 30, 30), 0.9);
+body.scheme-alt .bg-dark-navbar {
+     /* You might adjust opacity or fallback RGB for alt scheme */
 }
 
-/* Optional: Add a class to get RGB values from hex variables in JS */
-/* data-navbar-bg-light="#ffffff" data-navbar-bg-dark="#2d3748" in HTML */
-
-
-.nav-link {
+.nav-link, .nav-link-mobile {
     color: var(--navbar-link-color);
     transition: color 0.3s ease-in-out;
-    padding: 0.5rem 1rem; /* Add some padding */
+    padding: 0.5rem 1rem;
 }
-.nav-link:hover {
+.nav-link:hover, .nav-link-mobile:hover {
     color: var(--navbar-link-hover-color);
-    text-decoration: none; /* Remove underline on hover for nav links */
+    text-decoration: none;
 }
-/* Active nav link style (optional) */
-/* .nav-link.active {
-    color: var(--primary-color);
-    border-bottom: 2px solid var(--primary-color);
-} */
-
 
 /* --- Mobile Menu Styling --- */
-#mobile-menu-button {
-     color: var(--navbar-link-color); /* Hamburger icon color */
-     transition: color 0.3s ease-in-out;
+#mobile-menu-overlay {
+    /* Tailwind handles fixed, inset-0, z-40 */
+    background-color: rgba(0, 0, 0, 0.7); /* Darker overlay */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0; /* Start hidden with opacity */
 }
-body.dark-mode #mobile-menu-button {
-    color: var(--navbar-link-color);
+body.menu-open #mobile-menu-overlay {
+    opacity: 1; /* Show overlay */
 }
+
 
 #mobile-menu {
     /* Tailwind handles fixed, top-0, right-0, w-64, h-full, z-50, transform, transition */
     background-color: var(--navbar-bg); /* Match navbar background */
     color: var(--navbar-link-color); /* Text color */
+    border-left: 2px solid var(--primary-color); /* Accent border */
+    /* Initial state is handled by JS adding/removing transform */
+    /* We need to ensure it's hidden by default in CSS too */
+    display: none; /* Hide by default */
 }
+
+body.menu-open #mobile-menu {
+     display: block; /* Show when menu-open */
+     transform: translateX(0); /* Slide in */
+}
+
 #mobile-menu #close-mobile-menu {
-     color: var(--navbar-link-color); /* Close icon color */
+     color: var(--navbar-link-color);
      transition: color 0.3s ease-in-out;
 }
 
 .nav-link-mobile {
-    display: block; /* Make links block level */
-    padding: 1rem 0.5rem;
+    display: block;
+    padding: 1.2rem 0.5rem; /* More padding */
     color: var(--navbar-link-color);
-    transition: color 0.3s ease-in-out;
-     border-bottom: 1px solid rgba(var(--navbar-link-color-rgb, 74, 85, 104), 0.2); /* Separator */
+    transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+     border-bottom: 1px dashed rgba(var(--navbar-link-color-rgb, 224, 224, 224), 0.2); /* Dashed separator */
+     font-weight: 500; /* Rajdhani medium */
+     text-transform: uppercase;
 }
 .nav-link-mobile:last-child {
-     border-bottom: none; /* No border on last item */
+     border-bottom: none;
 }
 .nav-link-mobile:hover {
     color: var(--navbar-link-hover-color);
-    background-color: rgba(var(--heading-color-rgb, 45, 55, 72), 0.1); /* Subtle hover effect */
-}
-
-/* State when mobile menu is open */
-body.menu-open #mobile-menu {
-    transform: translateX(0); /* Slide in */
-}
-body.menu-open #mobile-menu-overlay {
-    display: block; /* Show overlay */
+    background-color: rgba(var(--primary-color-rgb, 0, 255, 255), 0.1); /* Subtle hover effect */
 }
 
 
@@ -218,14 +205,6 @@ body.menu-open #mobile-menu-overlay {
     /* background-attachment: fixed; */
 }
 
-/* Optional CSS Parallax element */
-/* .bg-parallax {
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
 .bg-overlay {
     background: var(--hero-overlay-color);
     /* Inherits absolute/inset/z-index from HTML */
@@ -237,14 +216,33 @@ body.menu-open #mobile-menu-overlay {
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
-    font-weight: inherit; /* Match font weight of surrounding text */
-    color: var(--hero-text-color); /* Match text color */
+    font-weight: inherit;
+    color: var(--primary-color); /* Cursor matches primary neon color */
 }
 @keyframes blink {
     0% { opacity: 1; }
     50% { opacity: 0; }
     100% { opacity: 1; }
 }
+
+/* Text Glow Effect */
+.glow-text {
+    text-shadow:
+        0 0 5px var(--primary-color),
+        0 0 10px var(--primary-color),
+        0 0 15px var(--primary-color),
+        0 0 20px var(--primary-color),
+        0 0 25px var(--secondary-color),
+        0 0 30px var(--secondary-color);
+}
+.glow-text-animation {
+    /* Add animation for subtle pulse or scanline effect if desired */
+    /* Example: animation: pulse-glow 2s infinite alternate ease-in-out; */
+}
+/* @keyframes pulse-glow {
+    0% { text-shadow: 0 0 5px var(--primary-color), ... ; }
+    100% { text-shadow: 0 0 8px var(--primary-color), ... ; }
+} */
 
 
 /* --- Section Backgrounds --- */
@@ -256,113 +254,129 @@ body.menu-open #mobile-menu-overlay {
 }
 
 /* Underline effect for section titles */
-h2::after { /* Apply to all h2 for simplicity */
+h2::after {
     content: "";
-    width: 70px; /* Slightly wider */
-    height: 4px;
-    background: var(--primary-color);
+    width: 80px; /* Wider underline */
+    height: 3px; /* Thinner underline */
+    background: var(--secondary-color); /* Underline uses secondary color */
     display: block;
-    margin: 15px auto 0; /* More space below title */
-    border-radius: 2px;
-}
-/* Ensure section titles use appropriate color */
-#about h2, #why-us h2, #clients h2, #contact h2, #blog-news h2 {
-    color: var(--heading-color);
-}
-#services h2, #sites h2, #testimonials h2 {
-    color: var(--heading-color);
+    margin: 15px auto 0;
+    border-radius: 1px;
+    box-shadow: 0 0 8px var(--secondary-color); /* Glow under the underline */
 }
 
 
 /* --- Card Styling (Services, Sites, Blog) --- */
 .card {
     background-color: var(--card-bg);
-    border: none;
-    border-radius: 0.75rem; /* More rounded corners */
-    box-shadow: 0 8px 20px var(--card-shadow); /* Stronger shadow */
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    border: 1px solid var(--primary-color); /* Neon border */
+    border-radius: 0.5rem; /* Less rounded for tech feel */
+    box-shadow: 0 0 15px var(--card-shadow-color); /* Neon Glow Shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-12px); /* Slightly more lift */
-    box-shadow: 0 12px 25px var(--card-shadow); /* Stronger hover shadow */
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px var(--card-shadow-color); /* Stronger glow on hover */
+    border-color: var(--secondary-color); /* Border color change on hover */
 }
 
 .card i {
-    font-size: 4rem; /* Larger icons */
+    font-size: 4rem;
     margin-bottom: 1.5rem;
-    color: var(--primary-color); /* Default icon color */
+    color: var(--primary-color); /* Icons match primary */
+    text-shadow: 0 0 8px var(--primary-color); /* Icon glow */
+    transition: text-shadow 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.card:hover i {
+     color: var(--secondary-color); /* Icon color change on hover */
+     text-shadow: 0 0 12px var(--secondary-color); /* Stronger glow on hover */
 }
 
-/* Specific site icon colors */
-#sites .card i.fa-blog { color: #dc3545; } /* Red */
-#sites .card i.fa-globe { color: #28a745; } /* Green */
-#sites .card i.fa-newspaper { color: #17a2b8; } /* Cyan */
+
+/* Specific site icon colors (override primary/secondary) */
+#sites .card i.fa-rss { color: #ff0000; text-shadow: 0 0 8px #ff0000; } /* Red for RSS */
+#sites .card:hover i.fa-rss { color: #ff5500; text-shadow: 0 0 12px #ff5500; } /* Orange-red on hover */
+#sites .card i.fa-globe-americas { color: #00ff00; text-shadow: 0 0 8px #00ff00; } /* Green for Global */
+#sites .card:hover i.fa-globe-americas { color: #00ffff; text-shadow: 0 0 12px #00ffff; } /* Cyan on hover */
+#sites .card i.fa-ethernet { color: #0000ff; text-shadow: 0 0 8px #0000ff; } /* Blue for Ethernet */
+#sites .card:hover i.fa-ethernet { color: #8a2be2; text-shadow: 0 0 12px #8a2be2; } /* Purple on hover */
 
 
 /* --- Why Choose Us Icon Box --- */
 .icon-box {
      /* Tailwind handles padding, inline-block, rounded-full */
-     background-color: var(--primary-color); /* Background matching primary */
-     opacity: 0.1;
+     border: 2px solid var(--primary-color); /* Neon border */
+     box-shadow: 0 0 15px var(--card-shadow-color); /* Glow */
+     transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.icon-box:hover {
+     border-color: var(--secondary-color);
+     box-shadow: 0 0 25px var(--testimonial-card-shadow-color);
 }
 .icon-box i {
     color: var(--primary-color); /* Icon color matching primary */
-    font-size: 2.5rem; /* Adjust size */
+    font-size: 2.5rem;
+    text-shadow: 0 0 8px var(--primary-color); /* Icon glow */
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+.icon-box:hover i {
+     color: var(--secondary-color);
+     text-shadow: 0 0 12px var(--secondary-color);
 }
 
 
 /* --- Testimonial Card Styling --- */
 .testimonial-card {
      background-color: var(--testimonial-card-bg);
-     border: none;
-     border-radius: 0.75rem; /* More rounded */
-     box-shadow: 0 6px 20px var(--testimonial-card-shadow);
-     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+     border: 1px solid var(--secondary-color); /* Neon border */
+     border-radius: 0.75rem;
+     box-shadow: 0 0 15px var(--testimonial-card-shadow-color);
+     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
      display: flex;
      flex-direction: column;
 }
+.testimonial-card:hover {
+    box-shadow: 0 0 25px var(--testimonial-card-shadow-color);
+     border-color: var(--primary-color);
+}
 .testimonial-card i.fa-quote-left {
     color: var(--primary-color);
+    text-shadow: 0 0 8px var(--primary-color);
 }
 .testimonial-card p {
-    color: var(--text-color); /* Ensure testimonial text uses text color variable */
+    color: var(--text-color);
 }
 .testimonial-card .flex img {
-    border: 3px solid var(--primary-color); /* Highlight avatar */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border: 2px solid var(--primary-color); /* Highlight avatar with neon border */
+    box-shadow: 0 0 8px var(--primary-color); /* Avatar glow */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.testimonial-card:hover .flex img {
+     border-color: var(--secondary-color);
+     box-shadow: 0 0 12px var(--secondary-color);
 }
 
 
 /* --- Clients Section Styling --- */
 #clients img {
-    filter: grayscale(100%); /* Grayscale client logos */
+    filter: grayscale(100%) brightness(50%); /* Grayscale and slightly darker */
+    opacity: 0.8; /* Slightly transparent */
     transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 #clients img:hover {
-    filter: grayscale(0%); /* Color on hover */
+    filter: grayscale(0%) brightness(100%); /* Full color and brightness on hover */
     opacity: 1;
-}
-body.dark-mode #clients img {
-     filter: invert(100%) grayscale(100%); /* Invert and grayscale in dark mode */
-}
-body.dark-mode #clients img:hover {
-     filter: invert(0%) grayscale(0%); /* Color on hover in dark mode */
 }
 
 
 /* --- Button Styling (Custom classes) --- */
 .btn-primary, .btn-secondary, .btn-outline, .btn-primary-outline {
-     display: inline-block;
-     padding: 1rem 2.5rem; /* Larger padding */
-     border-radius: 0.375rem; /* Slightly more rounded */
-     font-weight: 700; /* Bolder text */
-     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.1s ease-in-out; /* Added transform for pressed state */
-     text-align: center;
-     cursor: pointer;
-     text-decoration: none !important; /* Ensure no underline */
+     /* Base styles from previous version */
+     text-transform: uppercase; /* Uppercase buttons */
+     font-weight: 700;
 }
 
 .btn-primary {
@@ -372,11 +386,15 @@ body.dark-mode #clients img:hover {
 }
 .btn-primary:hover {
     opacity: 0.95;
-    /* background-color: darken(var(--btn-primary-bg), 5%); */ /* Needs SCSS or manual color calc */
 }
-.btn-primary:active { /* Pressed state */
-    transform: scale(0.98);
+.btn-primary.glow-effect {
+     box-shadow: 0 0 10px var(--primary-color); /* Button glow */
+     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
 }
+.btn-primary.glow-effect:hover {
+     box-shadow: 0 0 20px var(--primary-color); /* Stronger glow on hover */
+}
+
 
 .btn-secondary {
     background-color: transparent;
@@ -387,64 +405,83 @@ body.dark-mode #clients img:hover {
     background-color: var(--btn-secondary-hover-bg);
     color: var(--btn-secondary-hover-text);
 }
-.btn-secondary:active { /* Pressed state */
-    transform: scale(0.98);
+.btn-secondary.glow-effect {
+    box-shadow: 0 0 10px var(--secondary-color); /* Button glow */
+     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.1s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.btn-secondary.glow-effect:hover {
+     box-shadow: 0 0 20px var(--secondary-color);
 }
 
 
-.btn-outline { /* Used for site links */
-     display: inline-block;
+.btn-outline {
      background-color: transparent;
      color: var(--btn-outline-text);
      border: 1px solid var(--btn-outline-border);
-     padding: 0.75rem 2rem; /* Slightly less padding than main buttons */
-     border-radius: 0.375rem;
-     font-weight: 600;
 }
 .btn-outline:hover {
      background-color: var(--btn-outline-hover-bg);
      color: var(--btn-outline-hover-text);
 }
-.btn-outline:active { transform: scale(0.98); }
+.btn-outline.glow-effect {
+     box-shadow: 0 0 8px var(--btn-outline-border); /* Outline button glow */
+     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.btn-outline.glow-effect:hover {
+     box-shadow: 0 0 15px var(--btn-outline-border);
+     border-color: var(--btn-outline-hover-bg);
+}
 
 
-/* Outline button for Blog section */
 .btn-primary-outline {
     background-color: transparent;
     color: var(--btn-primary-outline-text);
     border: 2px solid var(--btn-primary-outline-border); /* Thicker border */
-    padding: 1rem 2.5rem;
 }
 .btn-primary-outline:hover {
     background-color: var(--btn-primary-outline-hover-bg);
     color: var(--btn-primary-outline-hover-text);
 }
-.btn-primary-outline:active { transform: scale(0.98); }
+.btn-primary-outline.glow-effect {
+     box-shadow: 0 0 10px var(--btn-primary-outline-border); /* Primary outline glow */
+     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+.btn-primary-outline.glow-effect:hover {
+     box-shadow: 0 0 20px var(--btn-primary-outline-border);
+     border-color: var(--btn-primary-outline-hover-bg);
+}
+
+/* Pressed state for all glow buttons */
+.glow-effect:active {
+     transform: scale(0.96); /* Slightly smaller scale transform */
+     box-shadow: 0 0 5px var(--primary-color), inset 0 0 5px var(--primary-color); /* Inner shadow on press */
+}
 
 
 /* --- Contact Section Styling --- */
 #contact .flex a i {
-    transition: color 0.3s ease-in-out;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+    text-shadow: 0 0 5px var(--primary-color); /* Icon glow */
 }
 #contact .flex a:hover i {
-    color: var(--primary-color); /* Use primary color on hover */
+    color: var(--secondary-color); /* Color change on hover */
+     text-shadow: 0 0 10px var(--secondary-color); /* Stronger glow on hover */
 }
 #contact input, #contact textarea {
-    /* Tailwind handles base styles, add custom theme styles */
-    background-color: var(--card-bg); /* Match card background */
+    background-color: var(--card-bg);
     color: var(--text-color);
-    border-color: var(--border-color, #dee2e6);
+    border: 1px solid var(--primary-color); /* Neon border for inputs */
+    box-shadow: 0 0 5px rgba(var(--primary-color-rgb, 0, 255, 255), 0.2); /* Subtle input glow */
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
-body.dark-mode #contact input, body.dark-mode #contact textarea {
-    border-color: var(--border-color, #444);
+#contact input:focus, #contact textarea:focus {
+     border-color: var(--secondary-color);
+     box-shadow: 0 0 10px rgba(var(--secondary-color-rgb, 0, 191, 255), 0.4); /* Stronger focus glow */
+     outline: none; /* Remove default outline */
 }
 #contact input::placeholder, #contact textarea::placeholder {
     color: var(--text-color);
-    opacity: 0.7;
-}
-body.dark-mode #contact input::placeholder, body.dark-mode #contact textarea::placeholder {
-     color: var(--text-color);
-     opacity: 0.6;
+    opacity: 0.6;
 }
 
 
@@ -453,7 +490,7 @@ body.dark-mode #contact input::placeholder, body.dark-mode #contact textarea::pl
     background-color: var(--footer-bg);
     color: var(--footer-text-color);
 }
-.text-footer-text { /* Use a specific class for footer text if needed */
+.text-footer-text {
     color: var(--footer-text-color);
 }
 footer a {
@@ -461,15 +498,16 @@ footer a {
     transition: color 0.3s ease-in-out;
 }
 footer a:hover {
-    color: white;
+    color: var(--primary-color); /* Footer links glow */
     text-decoration: none;
 }
 footer .fab {
      color: var(--footer-text-color);
-     transition: color 0.3s ease-in-out;
+     transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
 }
 footer .fab:hover {
-     color: white;
+     color: var(--primary-color);
+     text-shadow: 0 0 8px var(--primary-color); /* Footer social icons glow */
 }
 
 
@@ -478,60 +516,22 @@ footer .fab:hover {
     background-color: var(--toggle-btn-bg);
     border: 1px solid var(--toggle-btn-border);
     color: var(--toggle-btn-color);
-    /* Tailwind handles size, shape, flex, items-center, justify-center, rounded-full */
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    /* font-size is handled by Tailwind text-lg class in HTML */
+     box-shadow: 0 0 8px var(--primary-color); /* Toggle button glow */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .btn-toggle:hover {
-    background-color: rgba(128, 128, 128, 0.3); /* Slightly darker hover */
+    background-color: rgba(var(--primary-color-rgb, 0, 255, 255), 0.2); /* Hover background effect */
+     box-shadow: 0 0 15px var(--primary-color);
 }
 .btn-toggle.active {
      background-color: var(--toggle-btn-active-bg);
      color: var(--toggle-btn-active-color);
-     border-color: var(--toggle-btn-active-bg); /* Border matches background when active */
+     border-color: var(--toggle-btn-active-bg);
+     box-shadow: 0 0 15px var(--primary-color); /* Active button glow */
 }
-/* No need for dark-mode specific .btn-toggle rules here, as variables handle it */
 
 
 /* --- Responsive Adjustments (Fine-tuning CSS after Tailwind) --- */
-
-/* Center testimonial flex items on mobile */
-@media (max-width: 767px) { /* Below md breakpoint */
-     .testimonial-card .flex {
-         justify-content: center;
-         text-align: center; /* Center text below image */
-         flex-direction: column; /* Stack image and text vertically */
-         align-items: center;
-     }
-      .testimonial-card .flex img {
-         margin-right: 0; /* Remove right margin */
-         margin-bottom: 1rem; /* Add bottom margin */
-     }
-
-    /* Stack hero buttons */
-     #hero .btn-primary, #hero .btn-secondary {
-        display: block;
-        width: 100%;
-        margin-right: 0 !important;
-        margin-left: 0 !important;
-        margin-bottom: 1rem;
-    }
-     /* Remove bottom margin from last hero button */
-     #hero .btn-secondary:last-child {
-         margin-bottom: 0 !important;
-     }
-
-     /* Center footer sections on mobile */
-     footer .md\:text-left { text-align: center; }
-     footer .md\:text-right { text-align: center; }
-     footer .md\:mx-0 { margin-left: auto !important; margin-right: auto !important;}
-     footer .md\:max-w-none { max-width: none; }
-     footer .md\:mx-auto { margin-left: auto !important; margin-right: auto !important;}
-     footer .justify-center { justify-content: center; }
-     footer .md\:justify-end { justify-content: center; }
-}
-
 
 /* Adjust section padding on smaller screens */
 @media (max-width: 639px) { /* Below sm breakpoint */
@@ -540,14 +540,16 @@ footer .fab:hover {
     .px-4 { padding-left: 1rem; padding-right: 1rem; }
 }
 
-/* Example: Adjust hero title size on very small screens */
+/* Adjust hero title size on very small screens */
 @media (max-width: 480px) {
     h1.text-5xl { font-size: 2.5rem !important; }
     h2.text-4xl { font-size: 2rem !important; }
     .text-xl { font-size: 1.125rem !important; }
     .text-lg { font-size: 1rem !important; }
+    .btn-primary, .btn-secondary, .btn-outline, .btn-primary-outline {
+         padding: 0.8rem 1.5rem; /* Smaller button padding */
+    }
 }
-
 
 /* Hide scrollbar for aesthetic purposes (optional) */
 /* body {
