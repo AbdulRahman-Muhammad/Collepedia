@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "api/news.py": {
+      "runtime": "python3.9"
+    }
+  },
+  "routes": [
+    { "src": "/news", "dest": "/api/news.py" }
+  ]
+}
