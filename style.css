@@ -1,0 +1,270 @@
+/* style.css */
+
+/* Basic styling and overrides for Bootstrap */
+
+/* Import Google Font example (if not preloaded in HTML head) */
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap'); */
+
+
+/* Define CSS Variables for easy theme changes */
+:root {
+    --primary-color: #007bff; /* Example: Bootstrap primary blue */
+    --secondary-color: #6c757d; /* Example: Bootstrap secondary gray */
+    --dark-color: #343a40;
+    --light-color: #f8f9fa;
+    /* Update these font families if you import custom fonts */
+    --heading-font: 'Roboto', sans-serif;
+    --body-font: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: #333; /* Default text color */
+    padding-top: 70px; /* Space for fixed navbar */
+    overflow-x: hidden; /* Prevent horizontal scroll from animations */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- Navbar Styling --- */
+.navbar {
+    background-color: var(--dark-color) !important; /* Override Bootstrap */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.navbar .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: white;
+}
+
+/* Optional: Navbar scroll effect */
+/* body.scrolled .navbar {
+    background-color: rgba(52, 58, 64, 0.95) !important;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+} */
+
+
+/* --- Hero Section Styling --- */
+#hero {
+    background: url('hero-background.jpg') center center no-repeat; /* Add your background image */
+    background-size: cover;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+    display: flex; /* Use flexbox for vertical centering */
+    align-items: center;
+    padding: 100px 0; /* Add padding for smaller screens */
+}
+
+#hero::before {
+    content: "";
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+#hero h1 {
+    color: white; /* Hero title should be white */
+}
+
+#hero .lead {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Style the Typed.js cursor */
+.typed-cursor {
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+
+/* --- Section Styling --- */
+#about, #services, #sites, #contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+#about h2, #services h2, #sites h2, #contact h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Underline effect for section titles */
+#about h2::after, #services h2::after, #sites h2::after, #contact h2::after {
+    content: "";
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color);
+    display: block;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+
+/* --- Services and Sites Card Styling --- */
+#services .card, #sites .card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background-color: white; /* Ensure background is white */
+    height: 100%; /* Make cards the same height */
+}
+
+#services .card:hover, #sites .card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+#services .card-body, #sites .card-body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically if needed */
+    align-items: center; /* Center content horizontally */
+    text-align: center;
+}
+
+#services .card i, #sites .card i {
+    font-size: 3.5rem; /* Larger icons */
+    margin-bottom: 20px;
+    color: var(--primary-color); /* Use primary color for icons */
+}
+
+#sites .card i.fa-blog { color: #dc3545; /* Example: Red for blog */ }
+#sites .card i.fa-globe { color: #28a745; /* Example: Green for 'In' */ }
+#sites .card i.fa-newspaper { color: #17a2b8; /* Example: Cyan for 'News' */ }
+
+
+/* --- Contact Section Styling --- */
+#contact .text-center i.fab {
+    color: var(--dark-color); /* Color for social icons */
+    transition: color 0.3s ease-in-out;
+}
+#contact .text-center i.fab:hover {
+    color: var(--primary-color); /* Hover color */
+}
+
+
+/* --- Footer Styling --- */
+footer {
+    background-color: var(--dark-color) !important; /* Override Bootstrap */
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+}
+
+
+/* --- Language Toggle Styling --- */
+.language-toggle button {
+    cursor: pointer;
+    border: 1px solid white;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin-right: 5px;
+}
+.language-toggle button.active {
+    background-color: white;
+    color: var(--dark-color);
+    font-weight: bold;
+}
+
+
+/* --- RTL Adjustments for Arabic Language (Applied by JS toggle) --- */
+body[style*="direction: rtl"] {
+    text-align: right;
+}
+
+body[style*="direction: rtl"] .navbar-brand {
+    margin-right: 0;
+    margin-left: auto; /* Push logo to the right */
+}
+
+body[style*="direction: rtl"] .navbar-nav .ms-auto {
+     margin-left: inherit !important;
+     margin-right: auto !important; /* Push menu to the left */
+}
+
+body[style*="direction: rtl"] .text-lg-start {
+    text-align: right !important; /* Adjust text alignment in Hero */
+}
+
+body[style*="direction: rtl"] .me-2 {
+     margin-right: 0 !important;
+     margin-left: 0.5rem !important; /* Adjust margin for buttons etc */
+}
+
+body[style*="direction: rtl"] #about h2::after,
+body[style*="direction: rtl"] #services h2::after,
+body[style*="direction: rtl"] #sites h2::after,
+body[style*="direction: rtl"] #contact h2::after {
+     margin: 10px auto 0; /* Keep underline centered */
+}
+
+/* Add more specific RTL adjustments here as needed */
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 991.98px) { /* Adjusts for Bootstrap's 'lg' breakpoint */
+    .navbar-collapse {
+        text-align: center; /* Center menu items on smaller screens */
+    }
+    .navbar-nav .nav-item {
+        margin: 5px 0; /* Add vertical margin to nav items */
+    }
+}
+
+@media (max-width: 767.98px) { /* Adjusts for Bootstrap's 'md' breakpoint */
+    #hero {
+        min-height: 80vh; /* Smaller height for very small screens */
+        padding: 80px 0;
+    }
+
+    #hero .btn {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0 !important; /* Remove margin for stacked buttons */
+        margin-left: 0 !important;
+    }
+
+    /* Ensure text is centered in sections on mobile */
+     #about .text-lg-start,
+     #services .text-lg-start,
+     #sites .text-lg-start,
+     #contact .text-lg-start {
+        text-align: center !important;
+     }
+}
