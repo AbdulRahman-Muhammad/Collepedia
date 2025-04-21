@@ -2,14 +2,22 @@
   "version": 2,
   "builds": [
     {
-      "src": "api/news.py",
+      "src": "api/app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/news",
-      "dest": "api/news"
+      "dest": "api/app.py"
+    },
+    {
+      "src": "/api/articles",
+      "dest": "api/app.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
