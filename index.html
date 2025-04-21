@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Collepedia Media Agency</title>
-    <meta name="description" content="Official website for Collepedia Media Agency, featuring Colle-pedia Blogspot, Collepedia In, and Collepedia News.">
-    <meta name="keywords" content="Collepedia, Media Agency, Blogspot, News, Marketing, Content Creation, Dark Mode">
+    <meta name="description" content="Official website for Collepedia Media Agency, featuring innovative media solutions, content creation, and strategic communication. Discover our blog, news, and network.">
+    <meta name="keywords" content="Collepedia, Media Agency, Blog, News, Marketing, Content Creation, Communication, Digital Marketing, Public Relations, Advertising, Dark Mode">
     <meta name="author" content="Collepedia Media Agency">
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -14,19 +14,20 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-</head>
+    </head>
 <body class="antialiased transition-colors duration-300 ease-in-out">
-    <div class="fixed top-4 left-4 z-50 flex space-x-2">
+
+    <div class="fixed top-4 left-4 z-50 flex items-center space-x-4">
         <div class="language-toggle">
-            <button id="lang-en" class="btn-toggle active">EN</button>
-            <button id="lang-ar" class="btn-toggle">AR</button>
+            <a href="index-ar.html" class="btn-toggle">AR</a>
+            <a href="index.html" class="btn-toggle active">EN</a>
         </div>
         <div class="mode-toggle">
-            <button id="mode-toggle" class="btn-toggle">
+            <button id="mode-toggle" class="btn-toggle text-lg">
                  <i class="fas fa-sun" id="mode-icon"></i> </button>
         </div>
     </div>
@@ -34,159 +35,218 @@
 
     <nav class="fixed top-0 left-0 right-0 z-40 bg-dark-navbar transition-colors duration-300 ease-in-out shadow-md">
         <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <a class="flex items-center" href="#">
-                <img src="logo.png" alt="Collepedia Logo" class="h-10" data-aos="zoom-in">
+            <a class="flex items-center" href="#hero">
+                <img src="img/logo.png" alt="Collepedia Logo" class="h-10" data-aos="zoom-in">
             </a>
             <div class="flex space-x-6">
                  <a class="nav-link" href="#hero">Home</a>
                  <a class="nav-link" href="#about">About Us</a>
                  <a class="nav-link" href="#services">Services</a>
+                 <a class="nav-link" href="#why-us">Why Choose Us</a>
                  <a class="nav-link" href="#sites">Our Sites</a>
+                 <a class="nav-link" href="#clients">Clients</a>
                  <a class="nav-link" href="#contact">Contact</a>
             </div>
              </div>
     </nav>
 
     <header id="hero" class="bg-hero text-white min-h-screen flex items-center py-24 relative overflow-hidden transition-colors duration-300 ease-in-out">
-         <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
-         <div class="container mx-auto px-4 relative z-20">
-            <div class="max-w-2xl mx-auto text-center">
-                <h1 class="text-5xl md:text-6xl font-bold mb-4" data-aos="fade-up">Collepedia Media Agency</h1>
-                 <p class="text-xl md:text-2xl mb-8">We offer <span id="typed-output"></span></p>
-                 <div data-aos="fade-up" data-aos-delay="400">
-                    <a href="#sites" class="btn-primary mr-4">Explore Our Sites</a>
-                    <a href="#services" class="btn-secondary">Our Services</a>
-                </div>
-                 <div class="lang-ar-content hidden mt-8">
-                     <h1 class="text-5xl md:text-6xl font-bold mb-4">وكالة كوليبيديا الإعلامية</h1>
-                     <p class="text-xl md:text-2xl mb-8">نقدم <span id="typed-output-ar"></span></p>
-                     <div class="mt-4">
-                         <a href="#sites" class="btn-primary mr-4">اكتشف مواقعنا</a>
-                         <a href="#services" class="btn-secondary">تعرف على خدماتنا</a>
-                     </div>
-                 </div>
+         <div class="absolute inset-0 bg-overlay z-10"></div>
+         <div class="container mx-auto px-4 relative z-20 text-center max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4" data-aos="fade-up">Collepedia Media Agency</h1>
+             <p class="text-xl md:text-2xl mb-8">We offer <span id="typed-output"></span></p>
+             <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                 Your partner for cutting-edge media solutions, from strategic communication to compelling content creation and digital presence management.
+             </p>
+             <div data-aos="fade-up" data-aos-delay="400">
+                <a href="#sites" class="btn-primary mr-4">Explore Our Sites</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
             </div>
         </div>
     </header>
 
     <section id="about" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
-        <div class="container mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-center mb-12">About Collepedia</h2>
-            <div class="max-w-3xl mx-auto text-center">
-                <p class="text-lg mb-4">We are Collepedia Media Agency, specializing in...</p>
-                <p>... (More details about the agency, vision, mission) ...</p>
-                 <div class="lang-ar-content hidden">
-                     <h2 class="text-4xl font-bold text-center mb-12">عن وكالة كوليبيديا</h2>
-                     <p class="text-lg mb-4">نحن وكالة كوليبيديا الإعلامية، متخصصون في...</p>
-                     <p>... (تفاصيل أكتر عن الوكالة ورؤيتها ومهمتها) ...</p>
-                 </div>
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Collepedia</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <img src="img/about-image.jpg" alt="About Collepedia" class="rounded-lg shadow-lg"> </div>
+                <div data-aos="fade-left">
+                    <p class="text-lg mb-4">
+                        Founded on the principles of innovation and impact, Collepedia Media Agency is dedicated to empowering businesses and individuals through strategic media engagement.
+                    </p>
+                    <p class="mb-4">
+                        Our team of experts brings together diverse skills in journalism, digital marketing, graphic design, and web development to provide holistic solutions that resonate with your target audience. We believe in the power of compelling narratives and the reach of digital platforms to create meaningful connections.
+                    </p>
+                    <p>
+                         Whether you need to craft a powerful message, build a strong online presence, or navigate the complex media landscape, Collepedia is your trusted partner every step of the way.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="services" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
-        <div class="container mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Our Services</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Our Services</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-newspaper text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3">Media Content Production</h5>
-                    <p>Writing articles, reports, social media content...</p>
-                     <div class="lang-ar-content hidden">
-                         <h5 class="text-xl font-semibold mb-3">إنتاج المحتوى الإعلامي</h5>
-                         <p>كتابة مقالات، تقارير، محتوى سوشيال ميديا...</p>
-                     </div>
+                    <i class="fas fa-pencil-alt text-primary-color text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Content Creation & Strategy</h5>
+                    <p>Crafting engaging articles, reports, social media content, and developing effective content strategies that speak to your audience.</p>
                 </div>
                  <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-paint-brush text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3">Graphic Design</h5>
-                    <p>Logos, branding, visual assets...</p>
-                     <div class="lang-ar-content hidden">
-                         <h5 class="text-xl font-semibold mb-3">التصميم الجرافيكي</h5>
-                         <p>شعارات، هويات بصرية، أصول مرئية...</p>
-                     </div>
+                    <i class="fas fa-bullhorn text-primary-color text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Digital Marketing</h5>
+                    <p>SEO, social media marketing, email campaigns, and online advertising to boost your visibility and reach.</p>
                 </div>
                  <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-laptop-code text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3">Web Development</h5>
-                    <p>Creating professional websites...</p>
-                     <div class="lang-ar-content hidden">
-                         <h5 class="text-xl font-semibold mb-3">تطوير المواقع</h5>
-                         <p>بناء مواقع إلكترونية احترافية...</p>
-                     </div>
+                    <i class="fas fa-paint-brush text-primary-color text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Graphic Design & Branding</h5>
+                    <p>Creating impactful logos, visual identities, marketing materials, and graphics that capture attention.</p>
                 </div>
+                <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="150">
+                    <i class="fas fa-globe text-primary-color text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Web Development & Design</h5>
+                    <p>Building modern, responsive, and user-friendly websites tailored to your needs and brand identity.</p>
                 </div>
+                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="250">
+                    <i class="fas fa-video text-primary-color text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Video Production & Editing</h5>
+                    <p>Producing high-quality video content for marketing, social media, and corporate communications.</p>
+                </div>
+                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="350">
+                    <i class="fas fa-comments text-primary-color text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Public Relations</h5>
+                    <p>Managing your public image, media relations, and crisis communication strategies.</p>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="sites" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
-        <div class="container mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-center mb-12">Our Sites</h2>
+    <section id="why-us" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Why Choose Collepedia?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="icon-box mb-6">
+                        <i class="fas fa-lightbulb text-primary-color text-5xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Innovation</h4>
+                    <p>We stay ahead of media trends to bring you fresh and effective strategies.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="icon-box mb-6">
+                         <i class="fas fa-handshake text-primary-color text-5xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Partnership</h4>
+                    <p>We work closely with you to understand your goals and deliver tailored solutions.</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="icon-box mb-6">
+                        <i class="fas fa-chart-line text-primary-color text-5xl"></i>
+                    </div>
+                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Results</h4>
+                    <p>Our focus is on delivering measurable impact and helping you achieve success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sites" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Explore Our Network</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="card p-6 text-center" data-aos="zoom-in">
-                     <i class="fas fa-blog text-red-600 text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3">Colle-pedia Blogspot</h5>
-                    <p class="mb-4">A blog featuring diverse articles and topics.</p>
+                     <i class="fas fa-blog text-red-600 text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Colle-pedia Blogspot</h5>
+                    <p class="mb-4 text-text-color">Dive into a wide range of articles and insights from our community.</p>
                     <a href="https://colle-pedia.blogspot.com" class="btn-outline mt-auto" target="_blank">Visit Site</a>
-                     <div class="lang-ar-content hidden">
-                         <h5 class="text-xl font-semibold mb-3">مدونة كوليبيديا</h5>
-                         <p class="mb-4">مدونة تحتوي على مقالات ومواضيع متنوعة.</p>
-                         <a href="https://colle-pedia.blogspot.com" class="btn-outline mt-auto" target="_blank">زيارة الموقع</a>
-                     </div>
                 </div>
                 <div class="card p-6 text-center" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-globe text-green-600 text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3">Collepedia In</h5>
-                    <p class="mb-4">... (Description for Collepedia In content) ...</p>
-                    <a href="#" class="btn-outline mt-auto" target="_blank">Visit Site</a> <div class="lang-ar-content hidden">
-                         <h5 class="text-xl font-semibold mb-3">كوليبيديا إن</h5>
-                         <p class="mb-4">... (وصف لمحتوى موقع Collepedia In) ...</p>
-                         <a href="#" class="btn-outline mt-auto" target="_blank">زيارة الموقع</a>
-                     </div>
-                </div>
+                    <i class="fas fa-globe text-green-600 text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Collepedia In</h5>
+                    <p class="mb-4 text-text-color">... (Description for Collepedia In) ... Explore global perspectives and analyses.</p>
+                    <a href="#" class="btn-outline mt-auto" target="_blank">Visit Site</a> </div>
                 <div class="card p-6 text-center" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-newspaper text-blue-600 text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3">Collepedia News</h5>
-                    <p class="mb-4">... (Description for Collepedia News content) ...</p>
-                     <a href="#" class="btn-outline mt-auto" target="_blank">Visit Site</a> <div class="lang-ar-content hidden">
-                         <h5 class="text-xl font-semibold mb-3">كوليبيديا نيوز</h5>
-                         <p class="mb-4">... (وصف لمحتوى موقع Collepedia News) ...</p>
-                         <a href="#" class="btn-outline mt-auto" target="_blank">زيارة الموقع</a>
-                     </div>
-                </div>
+                    <i class="fas fa-newspaper text-blue-600 text-5xl mb-6"></i>
+                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Collepedia News</h5>
+                    <p class="mb-4 text-text-color">Stay updated with the latest news and developments curated by Collepedia.</p>
+                     <a href="#" class="btn-outline mt-auto" target="_blank">Visit Site</a> </div>
             </div>
         </div>
     </section>
 
-     <section id="contact" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
-        <div class="container mx-auto px-4" data-aos="fade-up">
-            <h2 class="text-4xl font-bold text-center mb-12 text-white">Contact Us</h2>
-            <div class="max-w-2xl mx-auto text-center text-white">
-                <p class="text-lg mb-8">For inquiries or service requests, please contact us:</p>
-                <div class="flex justify-center space-x-6 mb-8">
-                     <a href="mailto:info@collepedia.com" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fas fa-envelope text-3xl"></i></a> <a href="#" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fab fa-facebook text-3xl"></i></a> <a href="#" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fab fa-twitter text-3xl"></i></a>  <a href="#" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fab fa-linkedin text-3xl"></i></a> </div>
-                 <p>Email: info@collepedia.com (Example)</p>
-                 <p>Phone: +123 456 7890 (Example)</p>
-
-                 <div class="lang-ar-content hidden mt-8">
-                     <h2 class="text-4xl font-bold text-center mb-12">تواصل معنا</h2>
-                     <p class="text-lg mb-8">للاستفسارات أو طلب الخدمات، يرجى التواصل معنا عبر:</p>
-                      <div class="flex justify-center space-x-6 mb-8">
-                         <a href="mailto:info@collepedia.com" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fas fa-envelope text-3xl"></i></a>
-                        <a href="#" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fab fa-facebook text-3xl"></i></a>
-                        <a href="#" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fab fa-twitter text-3xl"></i></a>
-                        <a href="#" class="text-white hover:text-primary-color transition-colors duration-300"><i class="fab fa-linkedin text-3xl"></i></a>
+     <section id="testimonials" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">What Our Clients Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="testimonial-card p-6" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
+                    <p class="text-lg italic mb-4 text-text-color">"Collepedia transformed our online presence. Their content strategy was a game-changer!"</p>
+                    <div class="flex items-center justify-center md:justify-start">
+                         <img src="img/client1.png" alt="Client Name" class="w-12 h-12 rounded-full mr-4"> <div>
+                             <p class="font-semibold text-heading-color">- Client Name</p>
+                             <p class="text-sm text-text-color">Company A</p>
+                         </div>
                     </div>
-                     <p>البريد الإلكتروني: info@collepedia.com (مثال)</p>
-                     <p>الهاتف: +123 456 7890 (مثال)</p>
+                </div>
+                 <div class="testimonial-card p-6" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
+                    <p class="text-lg italic mb-4 text-text-color">"The graphic design work was exceptional, and their digital marketing boosted our leads significantly."</p>
+                    <div class="flex items-center justify-center md:justify-start">
+                         <img src="img/client2.png" alt="Client Name" class="w-12 h-12 rounded-full mr-4"> <div>
+                             <p class="font-semibold text-heading-color">- Client Name</p>
+                             <p class="text-sm text-text-color">Company B</p>
+                         </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+     <section id="blog-news" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
+         <div class="container mx-auto px-4">
+             <h2 class="text-4xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Latest Insights</h2>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                 <div class="card p-6" data-aos="fade-up" data-aos-delay="100">
+                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Understanding SEO Trends in 2025</h5>
+                     <p class="text-sm text-text-color mb-4">A brief look at the key shifts happening in search engine optimization this year...</p>
+                     <a href="https://colle-pedia.blogspot.com/link-to-article-1" class="text-primary-color hover:underline">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                  </div>
-            </div>
+                  <div class="card p-6" data-aos="fade-up" data-aos-delay="200">
+                     <h5 class="text-xl font-semibold mb-3 text-heading-color">The Power of Visual Storytelling</h5>
+                     <p class="text-sm text-text-color mb-4">How compelling visuals can elevate your brand's message and connect with your audience...</p>
+                     <a href="https://colle-pedia.blogspot.com/link-to-article-2" class="text-primary-color hover:underline">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                 </div>
+                  <div class="card p-6" data-aos="fade-up" data-aos-delay="300">
+                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Navigating Social Media Algorithms</h5>
+                     <p class="text-sm text-text-color mb-4">Key strategies to ensure your content gets seen in the ever-changing social media landscape...</p>
+                     <a href="https://colle-pedia.blogspot.com/link-to-article-3" class="text-primary-color hover:underline">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                 </div>
+             </div>
+             <div class="text-center mt-12" data-aos="fade-up">
+                 <a href="https://colle-pedia.blogspot.com" class="btn-primary-outline">Visit Our Blog for More</a> </div>
+         </div>
+     </section>
+
+
+     <section id="contact" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Get In Touch</h2>
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="text-lg mb-8 text-text-color">Ready to start your next media project? Contact us today to discuss how Collepedia Media Agency can help you achieve your goals.</p>
+                <div class="flex justify-center space-x-6 text-heading-color mb-8">
+                     <a href="mailto:info@collepedia.com" class="hover:text-primary-color transition-colors duration-300"><i class="fas fa-envelope text-4xl"></i></a> <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-facebook text-4xl"></i></a> <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-twitter text-4xl"></i></a>  <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-linkedin text-4xl"></i></a> </div>
+                 <p class="text-lg text-text-color">Email: <a href="mailto:info@collepedia.com" class="text-primary-color hover:underline">info@collepedia.com</a> (Example)</p>
+                 <p class="text-lg text-text-color">Phone: +123 456 7890 (Example)</p>
+                 </div>
         </div>
     </section>
 
     <footer class="bg-dark-footer text-white text-center py-8 transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <p class="text-sm">&copy; 2024 Collepedia Media Agency. All rights reserved.</p>
-            <div class="lang-ar-content hidden">
-                  <p class="text-sm">&copy; 2024 وكالة كوليبيديا الإعلامية. جميع الحقوق محفوظة.</p>
-             </div>
+            <p class="text-sm text-footer-text">&copy; 2024 Collepedia Media Agency. All rights reserved.</p>
         </div>
     </footer>
 
@@ -196,106 +256,30 @@
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 
     <script>
-        // --- Library Initializations (Moved to script.js for better organization) ---
-        // See script.js for AOS, Typed.js, and potential AnimeJS initializations.
+        // NOTE: Library initializations and main script logic
+        // are now in js/script.js
 
-        // --- Language Toggle Logic (can be moved to script.js) ---
-        // (Same logic as before, relies on .lang-ar-content being hidden by default CSS)
-        const langEnButton = document.getElementById('lang-en');
-        const langArButton = document.getElementById('lang-ar');
-        const arabicContent = document.querySelectorAll('.lang-ar-content');
-        const body = document.body;
+        // --- Smooth Scrolling for internal links (Can be moved to script.js) ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Adjust scroll position to account for fixed navbar
+                    const navbarHeight = document.querySelector('nav').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - navbarHeight;
 
-        function setLanguage(lang) {
-             if (lang === 'ar') {
-                document.documentElement.lang = 'ar';
-                body.classList.add('rtl'); // Add RTL class
-                langEnButton.classList.remove('active');
-                langArButton.classList.add('active');
-                 document.querySelectorAll('.lang-en-content').forEach(el => el.classList.add('hidden')); // Hide English
-                 arabicContent.forEach(el => el.classList.remove('hidden')); // Show Arabic
-                 if (window.typedEn && window.typedAr) { // Check if Typed instances exist
-                     window.typedEn.stop();
-                     window.typedAr.start();
-                 }
-            } else { // Default to English
-                document.documentElement.lang = 'en';
-                 body.classList.remove('rtl'); // Remove RTL class
-                langArButton.classList.remove('active');
-                langEnButton.classList.add('active');
-                 document.querySelectorAll('.lang-en-content').forEach(el => el.classList.remove('hidden')); // Show English
-                arabicContent.forEach(el => el.classList.add('hidden')); // Hide Arabic
-                 if (window.typedEn && window.typedAr) { // Check if Typed instances exist
-                     window.typedAr.stop();
-                     window.typedEn.start();
-                 }
-            }
-             // Save preference (optional)
-             localStorage.setItem('collepediaLang', lang);
-        }
-
-        // Load language preference on page load
-        const savedLang = localStorage.getItem('collepediaLang') || 'en'; // Default to English
-        setLanguage(savedLang);
-
-        langEnButton.addEventListener('click', () => setLanguage('en'));
-        langArButton.addEventListener('click', () => setLanguage('ar'));
-
-        // --- Dark Mode Toggle Logic (can be moved to script.js) ---
-        const modeToggle = document.getElementById('mode-toggle');
-        const modeIcon = document.getElementById('mode-icon');
-
-        function setMode(mode) {
-            if (mode === 'dark') {
-                body.classList.add('dark-mode'); // Add dark mode class
-                modeIcon.classList.remove('fa-sun');
-                modeIcon.classList.add('fa-moon'); // Change icon
-            } else { // Default to light mode
-                body.classList.remove('dark-mode'); // Remove dark mode class
-                modeIcon.classList.remove('fa-moon');
-                modeIcon.classList.add('fa-sun'); // Change icon
-            }
-             // Save preference
-             localStorage.setItem('collepediaMode', mode);
-        }
-
-        // Load mode preference on page load (checks system preference first, then local storage)
-        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        const savedMode = localStorage.getItem('collepediaMode');
-
-        if (savedMode) {
-            setMode(savedMode);
-        } else if (prefersDarkMode) {
-            setMode('dark');
-        } else {
-             setMode('light'); // Default
-        }
-
-
-        modeToggle.addEventListener('click', () => {
-            const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
-            setMode(currentMode === 'light' ? 'dark' : 'light');
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
         });
-
-         // Ensure initial display state is correct after language/mode are set
-         // This might require a slight delay or checking element visibility after toggles run
-         document.addEventListener('DOMContentLoaded', () => {
-             // Re-apply language/mode after DOM is fully loaded
-             setLanguage(localStorage.getItem('collepediaLang') || 'en');
-             const initialMode = localStorage.getItem('collepediaMode');
-             if (initialMode) {
-                setMode(initialMode);
-             } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                setMode('dark');
-             } else {
-                setMode('light');
-             }
-         });
-
-
     </script>
 
 </body>
