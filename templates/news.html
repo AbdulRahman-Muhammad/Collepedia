@@ -77,7 +77,6 @@
   <!-- Header: only brand and current date/time -->
   <div class="header">
     <div class="brand">Collepedia News</div>
-    <div class="current-time" id="currentTime"></div>
   </div>
   
   <!-- Hero Section with Search -->
@@ -112,15 +111,6 @@
   <script>
     let offset = 0, loading = false, articlesData = [];
     let sortNewest = true; // Sorting order: true = newest first
-    
-    // Update current time and date in header every second
-    function updateTime() {
-      const now = new Date();
-      const dateString = now.toLocaleDateString() + " " + now.toLocaleTimeString();
-      $('#currentTime').text(dateString);
-    }
-    setInterval(updateTime, 1000);
-    updateTime();
     
     // Update progress bar
     function updateProgress(value) {
