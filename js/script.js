@@ -4,94 +4,96 @@
 
 // Initialize AOS (Animate On Scroll)
 AOS.init({
-    duration: 1200, // Increased animation duration slightly
-    once: true, // Animation happens only once
-    mirror: false, // Elements do not animate out
-    easing: 'ease-in-out', // Animation timing function
-    // delay: 50, // Add a small initial delay to all animations (optional)
+    duration: 1200,
+    once: true,
+    mirror: false,
+    easing: 'ease-in-out',
 });
 
 // Initialize Typed.js for Hero Section
-window.typed = new Typed('#typed-output', { // Single instance now
+window.typed = new Typed('#typed-output', {
     strings: [
-        "innovative media solutions.",
-        "creative content.",
-        "strategic communication.",
-        "digital presence management.",
-        "your brand story.", // Added another string
-        "measurable impact." // Added another string
+        "Innovative Media Solutions.",
+        "Creative Content.",
+        "Strategic Communication.",
+        "Digital Presence Management.",
+        "Your Brand Story.",
+        "Measurable Impact.",
+        "Future-Proof Communication." // Added another string
     ],
-    typeSpeed: 40, // Slightly faster typing
-    backSpeed: 20, // Slightly faster backspacing
+    typeSpeed: 40,
+    backSpeed: 20,
     loop: true,
     showCursor: true,
-    cursorChar: '|', // Custom cursor character
-    autoInsertCss: true, // Let Typed.js inject cursor CSS (can be overridden in style.css)
+    cursorChar: '|',
+    autoInsertCss: true,
 });
 
 
-// --- Dark Mode Toggle Logic ---
+// --- Theme Color Scheme Toggle Logic ---
 const modeToggle = document.getElementById('mode-toggle');
 const modeIcon = document.getElementById('mode-icon');
 const body = document.body;
 
-// Helper function to get a computed style property
-function getCssVar(variable) {
-    return getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+// Helper function to get RGB values from a hex string (Needed for rgba CSS)
+function hexToRgb(hex) {
+  const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+  hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+    return r + r + g + g + b + b;
+  });
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
 }
 
-// Function to set the theme based on mode ('light' or 'dark')
-function setMode(mode) {
-    if (mode === 'dark') {
-        body.classList.add('dark-mode'); // Add dark mode class
-        modeIcon.classList.remove('fa-sun');
-        modeIcon.classList.add('fa-moon'); // Change icon to moon
-         // Optional: Update navbar background RGB for better opacity transition
-         // const darkRgb = hexToRgb(getCssVar('--navbar-bg')); // Requires hexToRgb helper
-         // document.documentElement.style.setProperty('--navbar-bg-rgb', `${darkRgb.r},${darkRgb.g},${darkRgb.b}`);
-    } else { // Default to light mode
-        body.classList.remove('dark-mode'); // Remove dark mode class
-        modeIcon.classList.remove('fa-moon');
-        modeIcon.classList.add('fa-sun'); // Change icon to sun
-         // Optional: Update navbar background RGB
-         // const lightRgb = hexToRgb(getCssVar('--navbar-bg')); // Requires hexToRgb helper
-         // document.documentElement.style.setProperty('--navbar-bg-rgb', `${lightRgb.r},${lightRgb.g},${lightRgb.b}`);
+// Function to set the color scheme ('default' or 'scheme-alt')
+function setColorScheme(scheme) {
+    const root = document.documentElement;
+    if (scheme === 'scheme-alt') {
+        body.classList.add('scheme-alt');
+        // You might change the icon here if you have different icons for schemes
+        // modeIcon.classList.remove('fa-palette'); // Example
+        // modeIcon.classList.add('fa-star'); // Example
+
+        // Optional: Update RGB variables for semi-transparent backgrounds if needed
+        // const primaryAltRgb = hexToRgb('#ff00ff'); // Replace with actual hex from CSS
+        // root.style.setProperty('--primary-color-rgb', `${primaryAltRgb.r},${primaryAltAltRgb.g},${primaryAltRgb.b}`);
+        // const secondaryAltRgb = hexToRgb('#8a2be2'); // Replace with actual hex from CSS
+        // root.style.setProperty('--secondary-color-rgb', `${secondaryAltRgb.r},${secondaryAltRgb.g},${secondaryAltRgb.b}`);
+
+    } else { // Default scheme
+        body.classList.remove('scheme-alt');
+        // Reset icon if changed
+        // modeIcon.classList.remove('fa-star'); // Example
+        // modeIcon.classList.add('fa-palette'); // Example
+
+        // Optional: Update RGB variables back to default if needed
+        // const primaryDefaultRgb = hexToRgb('#00ffff'); // Replace with actual hex from CSS
+        // root.style.setProperty('--primary-color-rgb', `${primaryDefaultRgb.r},${primaryDefaultRgb.g},${primaryDefaultRgb.b}`);
+         // const secondaryDefaultRgb = hexToRgb('#00bfff'); // Replace with actual hex from CSS
+        // root.style.setProperty('--secondary-color-rgb', `${secondaryDefaultRgb.r},${secondaryDefaultRgb.g},${secondaryDefaultRgb.b}`);
     }
     // Save the user's preference
-    localStorage.setItem('collepediaMode', mode);
+    localStorage.setItem('collepediaColorScheme', scheme);
 }
 
-// Simple Hex to RGB helper (needed if you use rgba with CSS variables)
-// function hexToRgb(hex) {
-//   const shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
-//   hex = hex.replace(shorthandRegex, function(m, r, g, b) {
-//     return r + r + g + g + b + b;
-//   });
-//   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-//   return result ? {
-//     r: parseInt(result[1], 16),
-//     g: parseInt(result[2], 16),
-//     b: parseInt(result[3], 16)
-//   } : null;
-// }
+// Load color scheme preference on page load
+const savedScheme = localStorage.getItem('collepediaColorScheme');
 
-
-// Load mode preference on page load
-const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-const savedMode = localStorage.getItem('collepediaMode');
-
-if (savedMode) {
-    setMode(savedMode);
-} else if (prefersDarkMode) {
-    setMode('dark');
+if (savedScheme) {
+    setColorScheme(savedScheme);
 } else {
-     setMode('light');
+     // Default to the base scheme defined in CSS :root
+     setColorScheme('default');
 }
 
 // Add event listener to the mode toggle button
 modeToggle.addEventListener('click', () => {
-    const currentMode = body.classList.contains('dark-mode') ? 'dark' : 'light';
-    setMode(currentMode === 'light' ? 'dark' : 'light');
+    const currentScheme = body.classList.contains('scheme-alt') ? 'scheme-alt' : 'default';
+    setColorScheme(currentScheme === 'default' ? 'scheme-alt' : 'default');
 });
 
 
@@ -101,20 +103,39 @@ const mobileMenu = document.getElementById('mobile-menu');
 const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
 const closeMobileMenuButton = document.getElementById('close-mobile-menu');
 const mobileNavLinks = document.querySelectorAll('#mobile-menu .nav-link-mobile');
+const navbar = document.getElementById('navbar');
 
-
+// Function to open the mobile menu
 function openMobileMenu() {
+    // Add a class to the body to prevent scrolling
     body.classList.add('menu-open');
-    // mobileMenu.classList.remove('translate-x-full'); // CSS transition handles this
-    // mobileMenuOverlay.classList.remove('hidden'); // CSS transition handles this
+    // Display the menu and overlay (CSS handles transform and opacity transition)
+    mobileMenu.style.display = 'block'; // Make it block to allow transition
+    mobileMenuOverlay.style.display = 'block'; // Make overlay block
+
+    // Allow CSS transition to run
+    setTimeout(() => {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenuOverlay.style.opacity = '1';
+    }, 10); // A small delay is often needed
 }
 
+// Function to close the mobile menu
 function closeMobileMenu() {
+    // Remove class from body
     body.classList.remove('menu-open');
-     // mobileMenu.classList.add('translate-x-full'); // CSS transition handles this
-     // mobileMenuOverlay.classList.add('hidden'); // CSS transition handles this
+    // Trigger CSS transition to hide
+    mobileMenu.classList.add('translate-x-full');
+    mobileMenuOverlay.style.opacity = '0';
+
+    // Hide elements completely after transition
+    setTimeout(() => {
+        mobileMenu.style.display = 'none';
+        mobileMenuOverlay.style.display = 'none';
+    }, 300); // Match CSS transition duration
 }
 
+// Add event listeners
 mobileMenuButton.addEventListener('click', openMobileMenu);
 closeMobileMenuButton.addEventListener('click', closeMobileMenu);
 mobileMenuOverlay.addEventListener('click', closeMobileMenu); // Close when clicking overlay
@@ -123,7 +144,7 @@ mobileMenuOverlay.addEventListener('click', closeMobileMenu); // Close when clic
 mobileNavLinks.forEach(link => {
     link.addEventListener('click', () => {
         // Add a small delay to allow smooth scroll to start before closing menu
-        setTimeout(closeMobileMenu, 300);
+        setTimeout(closeMobileMenu, 300); // Match close transition duration
     });
 });
 
@@ -136,54 +157,67 @@ document.addEventListener('keydown', (event) => {
 
 
 // --- Smooth Scrolling for internal links ---
-// (This is already included in the HTML <script> block for simplicity,
-// but can be moved here if preferred)
+// (This is already included in the HTML <script> block, no changes needed here unless moving it)
+// It's good practice to keep it in the main script.js file.
+// Let's move it here for better organization.
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+            // Adjust scroll position to account for fixed navbar
+            const navbarHeight = document.getElementById('navbar').offsetHeight;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
+            });
+        }
+    });
+});
 
 
-// --- Custom Animations (Example using AnimeJS) ---
+// --- Custom Animations (Using AnimeJS) ---
 
-// Example: Animate stats counters on scroll (Requires Intersection Observer for "in view" detection)
-// Assuming you have elements like <span class="stat-value" data-target="250">0</span>
-// function animateStatCounters() {
-//     document.querySelectorAll('.stat-value').forEach(span => {
-//         const targetValue = parseInt(span.getAttribute('data-target'));
-//         anime({
-//             targets: span,
-//             innerText: [0, targetValue],
-//             easing: 'easeOutQuad',
-//             duration: 2000,
-//             round: 1, // Round to nearest integer
-//             // Add Intersection Observer logic here to trigger this animation when element is in view
-//         });
-//     });
-// }
-// // Call animateStatCounters when section is in view (using Intersection Observer)
+// Example: Animate elements within sections as they appear (alternative or addition to AOS)
+// Requires Intersection Observer
+// const sectionsToAnimate = document.querySelectorAll('section');
 
-
-// Example: Staggered animation for service cards on section entry
-// AOS handles basic fade-up/zoom-in, but AnimeJS could do a more unique stagger
-// const servicesSection = document.getElementById('services');
-// const serviceCards = servicesSection ? servicesSection.querySelectorAll('.card') : [];
-
-// const servicesObserver = new IntersectionObserver((entries, observer) => {
+// const sectionObserver = new IntersectionObserver((entries, observer) => {
 //     entries.forEach(entry => {
 //         if (entry.isIntersecting) {
+//             // Animate children elements (e.g., h2, p, cards)
+//             const elementsToAnimate = entry.target.querySelectorAll('h2, p, .card, .icon-box');
 //             anime({
-//                 targets: serviceCards,
+//                 targets: elementsToAnimate,
 //                 opacity: [0, 1],
 //                 translateY: [50, 0],
-//                 delay: anime.stagger(150), // Staggered delay
+//                 delay: anime.stagger(100, {start: 200}), // Stagger effect
 //                 easing: 'easeOutExpo',
-//                 duration: 1000
+//                 duration: 800
 //             });
-//             observer.unobserve(entry.target); // Stop observing once animated
+//             observer.unobserve(entry.target); // Stop observing
 //         }
 //     });
-// }, { threshold: 0.2 }); // Trigger when 20% of the section is visible
+// }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
 
-// if (servicesSection) {
-//     servicesObserver.observe(servicesSection);
-// }
+// sectionsToAnimate.forEach(section => {
+//     sectionObserver.observe(section);
+// });
+
+
+// Example: Pulse animation for the mode toggle button icon
+// anime({
+//     targets: '#mode-icon',
+//     scale: [1, 1.1, 1],
+//     opacity: [0.8, 1, 0.8],
+//     easing: 'easeInOutSine',
+//     duration: 1500,
+//     loop: true,
+//     direction: 'alternate',
+// });
 
 
 // --- Optional: Simple Parallax Effect (JS based) ---
@@ -198,18 +232,8 @@ document.addEventListener('keydown', (event) => {
 // });
 
 
-// --- Optional: Lazy Loading Images ---
-// Requires adding 'loading="lazy"' to your <img> tags in HTML
-// and potentially a fallback for browsers that don't support it (more complex JS)
-// Or use a library like vanilla-lazyload
-// <img src="placeholder.jpg" data-src="path/to/your/image.jpg" alt="..." class="lazy">
-// const lazyLoadInstance = new LazyLoad({
-//     elements_selector: ".lazy"
-// });
-
-
-// --- Optional: Animate Navbar Background on Scroll ---
-// Check if the 'scrolled' class logic is in HTML or here
+// --- Optional: Animate Navbar Background Opacity on Scroll ---
+// If you add a '.scrolled' class to the navbar
 // const navbar = document.getElementById('navbar');
 // window.addEventListener('scroll', () => {
 //     if (window.scrollY > 50) {
