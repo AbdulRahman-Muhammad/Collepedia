@@ -1,13 +1,16 @@
+import os
 import asyncio
 import time
 import re
 import feedparser
 import httpx
-from flask import Flask, jsonify, request, render_template
+from flask import Flask, jsonify, request, render_template, send_from_directory
 from flask_caching import Cache
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_folder='../',
+            template_folder='../templates')
 app.config["CACHE_TYPE"] = "SimpleCache"
 app.config["CACHE_DEFAULT_TIMEOUT"] = 300
 cache = Cache(app)
@@ -128,6 +131,21 @@ async def get_articles():
         cache.set(cache_key, articles)
     result = articles[offset:offset+10]
     return jsonify(result)
+
+@app.route('/')
+def root_index():
+    try:
+        return send_from_directory(app.static_folder, 'index.html')
+    except FileNotFoundError:
+        return "Error: index.html not found in project root", 404
+
+@app.route('/<path:filename>')
+def serve_other_static(filename):
+    try:
+        return send_from_directory(app.static_folder, filename)
+    except FileNotFoundError:
+        return "File not found", 404
+
 
 if __name__ == "__main__":
     app.run(debug=True)
