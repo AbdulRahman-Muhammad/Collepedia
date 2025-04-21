@@ -42,7 +42,7 @@ def get_published_datetime(entry):
 def clean_text(text):
     if text:
         # إزالة عبارات غير مرغوبة
-        for phrase in ["Continue Reading", "Read more", "continue reading"]:
+        for phrase in ["Continue Reading", "Read more", "continue reading", "Continue reading..."]:
             text = text.replace(phrase, "")
         # إزالة كتل <ul> مع محتواها بالكامل
         text = re.sub(r'<ul.*?</ul>', '', text, flags=re.DOTALL)
