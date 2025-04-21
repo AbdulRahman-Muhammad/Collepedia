@@ -4,92 +4,112 @@
 :root {
     /* Light Mode Defaults */
     --bg-color: #ffffff;
-    --text-color: #333333;
-    --heading-color: #1a1a1a;
-    --primary-color: #007bff; /* Collepedia Blue (Example) */
-    --secondary-color: #6c757d;
-    --navbar-bg: #343a40;
-    --navbar-link-color: rgba(255, 255, 255, 0.75);
-    --navbar-link-hover-color: #ffffff;
-    --section-light-bg: #f8f9fa;
-    --section-dark-bg: #e9ecef;
+    --text-color: #4a5568; /* Slightly softer text */
+    --heading-color: #2d3748; /* Darker headings */
+    --primary-color: #3182ce; /* A pleasant blue */
+    --secondary-color: #4c51bf; /* A complementary indigo */
+    --navbar-bg: #ffffff; /* Light navbar */
+    --navbar-link-color: #4a5568;
+    --navbar-link-hover-color: #3182ce; /* Hover uses primary color */
+    --section-light-bg: #edf2f7; /* Light gray section */
+    --section-dark-bg: #e2e8f0; /* Slightly darker gray */
     --card-bg: #ffffff;
     --card-shadow: rgba(0, 0, 0, 0.1);
     --testimonial-card-bg: #ffffff;
     --testimonial-card-shadow: rgba(0, 0, 0, 0.08);
-    --footer-bg: #343a40;
-    --footer-text-color: rgba(255, 255, 255, 0.75);
+    --footer-bg: #2d3748; /* Dark blue-gray footer */
+    --footer-text-color: #a0aec0; /* Light gray text */
 
     /* Hero specific styles */
     --hero-text-color: #ffffff;
-    --hero-overlay-color: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    --hero-overlay-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
 
-    /* Button Specific Colors (Optional: override primary) */
+    /* Button Specific Colors */
     --btn-primary-bg: var(--primary-color);
     --btn-primary-text: white;
-    --btn-secondary-border: var(--primary-color);
-    --btn-secondary-text: var(--primary-color);
-    --btn-secondary-hover-bg: var(--primary-color);
+    --btn-secondary-border: var(--secondary-color);
+    --btn-secondary-text: var(--secondary-color);
+    --btn-secondary-hover-bg: var(--secondary-color);
     --btn-secondary-hover-text: white;
      --btn-outline-border: var(--primary-color);
      --btn-outline-text: var(--primary-color);
      --btn-outline-hover-bg: var(--primary-color);
      --btn-outline-hover-text: white;
+     --btn-primary-outline-border: var(--primary-color); /* Custom outline */
+     --btn-primary-outline-text: var(--primary-color);
+     --btn-primary-outline-hover-bg: var(--primary-color);
+     --btn-primary-outline-hover-text: white;
 
+      /* Toggle Button Colors */
+      --toggle-btn-bg: rgba(128, 128, 128, 0.2);
+      --toggle-btn-border: rgba(255, 255, 255, 0.4);
+      --toggle-btn-color: white;
+      --toggle-btn-active-bg: white;
+      --toggle-btn-active-color: var(--dark-color, #2d3748); /* Use a dark color for text */
 }
 
 /* Dark Mode Variables - Overrides */
 body.dark-mode {
-    --bg-color: #121212; /* Very dark background */
-    --text-color: #e0e0e0; /* Light gray text */
+    --bg-color: #1a202c; /* Dark background */
+    --text-color: #e2e8f0; /* Light text */
     --heading-color: #ffffff; /* White headings */
-    --primary-color: #bb86fc; /* Purple accent for dark mode */
-    --secondary-color: #03dac6; /* Teal secondary for dark mode */
-    --navbar-bg: #1e1e1e; /* Darker navbar */
-    --navbar-link-color: rgba(255, 255, 255, 0.85);
-    --navbar-link-hover-color: #ffffff;
-    --section-light-bg: #1e1e1e; /* Dark background for light sections */
-    --section-dark-bg: #282828; /* Even darker for dark sections */
-    --card-bg: #1e1e1e; /* Card background in dark mode */
-    --card-shadow: rgba(0, 0, 0, 0.3);
-    --testimonial-card-bg: #282828;
-    --testimonial-card-shadow: rgba(0, 0, 0, 0.4);
-    --footer-bg: #1e1e1e;
-    --footer-text-color: rgba(255, 255, 255, 0.85);
+    --primary-color: #9f7aea; /* Purple accent for dark mode */
+    --secondary-color: #63b3ed; /* Light blue secondary */
+    --navbar-bg: #2d3748; /* Darker navbar */
+    --navbar-link-color: #e2e8f0;
+    --navbar-link-hover-color: #9f7aea; /* Hover uses dark mode primary */
+    --section-light-bg: #2d3748; /* Dark background for light sections */
+    --section-dark-bg: #4a5568; /* Slightly lighter dark */
+    --card-bg: #2d3748; /* Dark card background */
+    --card-shadow: rgba(0, 0, 0, 0.4);
+    --testimonial-card-bg: #4a5568; /* Slightly different dark for testimonials */
+    --testimonial-card-shadow: rgba(0, 0, 0, 0.5);
+    --footer-bg: #1a202c; /* Match body background */
+    --footer-text-color: #a0aec0;
 
     --hero-text-color: #ffffff;
-    --hero-overlay-color: rgba(0, 0, 0, 0.8); /* Darker overlay in dark mode */
-
+    --hero-overlay-color: rgba(0, 0, 0, 0.8); /* Darker overlay */
 
     /* Button Specific Colors (Dark Mode) */
     --btn-primary-bg: var(--primary-color);
-    --btn-primary-text: #1a1a1a; /* Dark text on light accent */
-    --btn-secondary-border: var(--primary-color);
-    --btn-secondary-text: var(--primary-color);
-    --btn-secondary-hover-bg: var(--primary-color);
-    --btn-secondary-hover-text: #1a1a1a;
-     --btn-outline-border: var(--primary-color);
-     --btn-outline-text: var(--primary-color);
-     --btn-outline-hover-bg: var(--primary-color);
-     --btn-outline-hover-text: #1a1a1a;
+    --btn-primary-text: #1a202c; /* Dark text on light accent */
+    --btn-secondary-border: var(--secondary-color);
+    --btn-secondary-text: var(--secondary-color);
+    --btn-secondary-hover-bg: var(--secondary-color);
+    --btn-secondary-hover-text: #1a202c;
+    --btn-outline-border: var(--primary-color);
+    --btn-outline-text: var(--primary-color);
+    --btn-outline-hover-bg: var(--primary-color);
+    --btn-outline-hover-text: #1a202c;
+     --btn-primary-outline-border: var(--primary-color);
+     --btn-primary-outline-text: var(--primary-color);
+     --btn-primary-outline-hover-bg: var(--primary-color);
+     --btn-primary-outline-hover-text: #1a202c;
+
+     /* Toggle Button Colors (Dark Mode) */
+     --toggle-btn-bg: rgba(255, 255, 255, 0.1);
+     --toggle-btn-border: rgba(255, 255, 255, 0.3);
+     --toggle-btn-color: #e2e8f0;
+     --toggle-btn-active-bg: var(--primary-color);
+     --toggle-btn-active-color: #1a202c;
 }
 
 
 /* --- Base Styles --- */
 body {
-    font-family: var(--body-font);
-    line-height: 1.7; /* Improved readability */
+    font-family: var(--body-font); /* Apply body font */
+    line-height: 1.7;
     color: var(--text-color);
     background-color: var(--bg-color);
-    padding-top: 64px; /* Adjusted based on Tailwind's default height for py-3 */
+    padding-top: 64px; /* Adjust based on navbar height */
     overflow-x: hidden;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: var(--heading-font);
+    font-family: var(--heading-font); /* Apply heading font */
     color: var(--heading-color);
-    line-height: 1.3; /* Adjusted line height */
+    line-height: 1.3;
     margin-bottom: 1rem;
 }
 
@@ -107,30 +127,83 @@ a:hover {
     text-decoration: underline;
 }
 
+.container { /* Override default Tailwind container behavior if needed */
+    max-width: 1200px; /* Set a max-width for larger screens */
+}
+
+
 /* --- Navbar Styling --- */
 .bg-dark-navbar {
      background-color: var(--navbar-bg);
+     backdrop-filter: blur(8px); /* Frosted glass effect (modern) */
+     background-color: rgba(var(--navbar-bg-rgb, 52, 58, 64), 0.9); /* Semi-transparent with fallback */
+     /* Need JS to update --navbar-bg-rgb based on mode toggle */
 }
+body.dark-mode .bg-dark-navbar {
+     background-color: rgba(var(--navbar-bg-rgb, 30, 30, 30), 0.9);
+}
+
+/* Optional: Add a class to get RGB values from hex variables in JS */
+/* data-navbar-bg-light="#ffffff" data-navbar-bg-dark="#2d3748" in HTML */
+
+
 .nav-link {
     color: var(--navbar-link-color);
     transition: color 0.3s ease-in-out;
-     /* Add padding/margin if not using Tailwind's flex/space */
-     /* padding: 0.5rem 1rem; */
+    padding: 0.5rem 1rem; /* Add some padding */
 }
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover {
     color: var(--navbar-link-hover-color);
+    text-decoration: none; /* Remove underline on hover for nav links */
+}
+/* Active nav link style (optional) */
+/* .nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+} */
+
+
+/* --- Mobile Menu Styling --- */
+#mobile-menu-button {
+     color: var(--navbar-link-color); /* Hamburger icon color */
+     transition: color 0.3s ease-in-out;
+}
+body.dark-mode #mobile-menu-button {
+    color: var(--navbar-link-color);
 }
 
-/* Optional: Navbar scroll effect */
-/* body.scrolled .bg-dark-navbar {
-    background-color: rgba(30, 30, 30, 0.95); // Example semi-transparent dark
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+#mobile-menu {
+    /* Tailwind handles fixed, top-0, right-0, w-64, h-full, z-50, transform, transition */
+    background-color: var(--navbar-bg); /* Match navbar background */
+    color: var(--navbar-link-color); /* Text color */
 }
-body:not(.dark-mode).scrolled .bg-dark-navbar {
-    background-color: rgba(52, 58, 64, 0.95); // Example semi-transparent light-dark
-    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-} */
+#mobile-menu #close-mobile-menu {
+     color: var(--navbar-link-color); /* Close icon color */
+     transition: color 0.3s ease-in-out;
+}
+
+.nav-link-mobile {
+    display: block; /* Make links block level */
+    padding: 1rem 0.5rem;
+    color: var(--navbar-link-color);
+    transition: color 0.3s ease-in-out;
+     border-bottom: 1px solid rgba(var(--navbar-link-color-rgb, 74, 85, 104), 0.2); /* Separator */
+}
+.nav-link-mobile:last-child {
+     border-bottom: none; /* No border on last item */
+}
+.nav-link-mobile:hover {
+    color: var(--navbar-link-hover-color);
+    background-color: rgba(var(--heading-color-rgb, 45, 55, 72), 0.1); /* Subtle hover effect */
+}
+
+/* State when mobile menu is open */
+body.menu-open #mobile-menu {
+    transform: translateX(0); /* Slide in */
+}
+body.menu-open #mobile-menu-overlay {
+    display: block; /* Show overlay */
+}
 
 
 /* --- Hero Section Styling --- */
@@ -141,18 +214,16 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
     background-size: cover;
     color: var(--hero-text-color);
     position: relative;
-    /* Add parallax if using CSS */
+    /* Optional: Add CSS Parallax */
     /* background-attachment: fixed; */
 }
 
-/* Optional CSS Parallax on background image (alternative to JS) */
-/* This can cause issues on mobile or with background-size: cover */
+/* Optional CSS Parallax element */
 /* .bg-parallax {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    filter: brightness(70%); // Example: Darken the background image
 } */
 
 .bg-overlay {
@@ -166,8 +237,8 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
     -webkit-animation: blink 0.7s infinite;
     -moz-animation: blink 0.7s infinite;
     animation: blink 0.7s infinite;
-    font-weight: 100; /* Match font weight of text */
-     color: var(--hero-text-color); /* Match text color */
+    font-weight: inherit; /* Match font weight of surrounding text */
+    color: var(--hero-text-color); /* Match text color */
 }
 @keyframes blink {
     0% { opacity: 1; }
@@ -185,27 +256,21 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
 }
 
 /* Underline effect for section titles */
-#about h2::after,
-#services h2::after,
-#why-us h2::after,
-#sites h2::after,
-#testimonials h2::after,
-#blog-news h2::after,
-#contact h2::after {
+h2::after { /* Apply to all h2 for simplicity */
     content: "";
-    width: 60px;
+    width: 70px; /* Slightly wider */
     height: 4px;
     background: var(--primary-color);
     display: block;
-    margin: 10px auto 0;
+    margin: 15px auto 0; /* More space below title */
     border-radius: 2px;
 }
 /* Ensure section titles use appropriate color */
-#about h2, #why-us h2, #testimonials h2, #contact h2 {
+#about h2, #why-us h2, #clients h2, #contact h2, #blog-news h2 {
     color: var(--heading-color);
 }
-#services h2, #sites h2, #blog-news h2 {
-    color: var(--heading-color); /* Headings are often white on dark backgrounds */
+#services h2, #sites h2, #testimonials h2 {
+    color: var(--heading-color);
 }
 
 
@@ -213,20 +278,20 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
 .card {
     background-color: var(--card-bg);
     border: none;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 15px var(--card-shadow); /* Slightly larger shadow */
+    border-radius: 0.75rem; /* More rounded corners */
+    box-shadow: 0 8px 20px var(--card-shadow); /* Stronger shadow */
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
 }
 
 .card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px var(--card-shadow);
+    transform: translateY(-12px); /* Slightly more lift */
+    box-shadow: 0 12px 25px var(--card-shadow); /* Stronger hover shadow */
 }
 
 .card i {
-    font-size: 3.5rem; /* Slightly larger icons */
+    font-size: 4rem; /* Larger icons */
     margin-bottom: 1.5rem;
     color: var(--primary-color); /* Default icon color */
 }
@@ -237,33 +302,67 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
 #sites .card i.fa-newspaper { color: #17a2b8; } /* Cyan */
 
 
+/* --- Why Choose Us Icon Box --- */
+.icon-box {
+     /* Tailwind handles padding, inline-block, rounded-full */
+     background-color: var(--primary-color); /* Background matching primary */
+     opacity: 0.1;
+}
+.icon-box i {
+    color: var(--primary-color); /* Icon color matching primary */
+    font-size: 2.5rem; /* Adjust size */
+}
+
+
 /* --- Testimonial Card Styling --- */
 .testimonial-card {
      background-color: var(--testimonial-card-bg);
      border: none;
-     border-radius: 0.5rem;
-     box-shadow: 0 4px 15px var(--testimonial-card-shadow);
+     border-radius: 0.75rem; /* More rounded */
+     box-shadow: 0 6px 20px var(--testimonial-card-shadow);
      transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
-     /* Optional: Add a subtle border or highlight */
-     /* border-left: 4px solid var(--primary-color); */
+     display: flex;
+     flex-direction: column;
 }
 .testimonial-card i.fa-quote-left {
     color: var(--primary-color);
 }
 .testimonial-card p {
-    color: var(--text-color);
+    color: var(--text-color); /* Ensure testimonial text uses text color variable */
+}
+.testimonial-card .flex img {
+    border: 3px solid var(--primary-color); /* Highlight avatar */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* --- Clients Section Styling --- */
+#clients img {
+    filter: grayscale(100%); /* Grayscale client logos */
+    transition: filter 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+#clients img:hover {
+    filter: grayscale(0%); /* Color on hover */
+    opacity: 1;
+}
+body.dark-mode #clients img {
+     filter: invert(100%) grayscale(100%); /* Invert and grayscale in dark mode */
+}
+body.dark-mode #clients img:hover {
+     filter: invert(0%) grayscale(0%); /* Color on hover in dark mode */
 }
 
 
 /* --- Button Styling (Custom classes) --- */
 .btn-primary, .btn-secondary, .btn-outline, .btn-primary-outline {
      display: inline-block;
-     padding: 0.75rem 2rem;
-     border-radius: 0.25rem;
-     font-weight: 600;
-     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out;
+     padding: 1rem 2.5rem; /* Larger padding */
+     border-radius: 0.375rem; /* Slightly more rounded */
+     font-weight: 700; /* Bolder text */
+     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.1s ease-in-out; /* Added transform for pressed state */
      text-align: center;
      cursor: pointer;
+     text-decoration: none !important; /* Ensure no underline */
 }
 
 .btn-primary {
@@ -272,9 +371,11 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
     border: 1px solid var(--btn-primary-bg);
 }
 .btn-primary:hover {
-    opacity: 0.9;
-    background-color: darken(var(--btn-primary-bg), 5%); /* Needs SCSS or manual */
-    text-decoration: none;
+    opacity: 0.95;
+    /* background-color: darken(var(--btn-primary-bg), 5%); */ /* Needs SCSS or manual color calc */
+}
+.btn-primary:active { /* Pressed state */
+    transform: scale(0.98);
 }
 
 .btn-secondary {
@@ -285,19 +386,65 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
 .btn-secondary:hover {
     background-color: var(--btn-secondary-hover-bg);
     color: var(--btn-secondary-hover-text);
-    text-decoration: none;
 }
+.btn-secondary:active { /* Pressed state */
+    transform: scale(0.98);
+}
+
+
+.btn-outline { /* Used for site links */
+     display: inline-block;
+     background-color: transparent;
+     color: var(--btn-outline-text);
+     border: 1px solid var(--btn-outline-border);
+     padding: 0.75rem 2rem; /* Slightly less padding than main buttons */
+     border-radius: 0.375rem;
+     font-weight: 600;
+}
+.btn-outline:hover {
+     background-color: var(--btn-outline-hover-bg);
+     color: var(--btn-outline-hover-text);
+}
+.btn-outline:active { transform: scale(0.98); }
+
 
 /* Outline button for Blog section */
 .btn-primary-outline {
     background-color: transparent;
-    color: var(--btn-outline-text);
-    border: 2px solid var(--btn-outline-border); /* Thicker border */
+    color: var(--btn-primary-outline-text);
+    border: 2px solid var(--btn-primary-outline-border); /* Thicker border */
+    padding: 1rem 2.5rem;
 }
 .btn-primary-outline:hover {
-    background-color: var(--btn-outline-hover-bg);
-    color: var(--btn-outline-hover-text);
-    text-decoration: none;
+    background-color: var(--btn-primary-outline-hover-bg);
+    color: var(--btn-primary-outline-hover-text);
+}
+.btn-primary-outline:active { transform: scale(0.98); }
+
+
+/* --- Contact Section Styling --- */
+#contact .flex a i {
+    transition: color 0.3s ease-in-out;
+}
+#contact .flex a:hover i {
+    color: var(--primary-color); /* Use primary color on hover */
+}
+#contact input, #contact textarea {
+    /* Tailwind handles base styles, add custom theme styles */
+    background-color: var(--card-bg); /* Match card background */
+    color: var(--text-color);
+    border-color: var(--border-color, #dee2e6);
+}
+body.dark-mode #contact input, body.dark-mode #contact textarea {
+    border-color: var(--border-color, #444);
+}
+#contact input::placeholder, #contact textarea::placeholder {
+    color: var(--text-color);
+    opacity: 0.7;
+}
+body.dark-mode #contact input::placeholder, body.dark-mode #contact textarea::placeholder {
+     color: var(--text-color);
+     opacity: 0.6;
 }
 
 
@@ -306,137 +453,111 @@ body:not(.dark-mode).scrolled .bg-dark-navbar {
     background-color: var(--footer-bg);
     color: var(--footer-text-color);
 }
+.text-footer-text { /* Use a specific class for footer text if needed */
+    color: var(--footer-text-color);
+}
+footer a {
+    color: var(--footer-text-color);
+    transition: color 0.3s ease-in-out;
+}
+footer a:hover {
+    color: white;
+    text-decoration: none;
+}
+footer .fab {
+     color: var(--footer-text-color);
+     transition: color 0.3s ease-in-out;
+}
+footer .fab:hover {
+     color: white;
+}
 
 
-/* --- Language/Mode Toggle Button Styling --- */
+/* --- Toggle Button Styling --- */
 .btn-toggle {
-    background-color: rgba(128, 128, 128, 0.2); /* Semi-transparent gray */
-    color: white; /* Or adjust based on mode */
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    padding: 0.3rem 0.6rem;
-    border-radius: 0.25rem;
+    background-color: var(--toggle-btn-bg);
+    border: 1px solid var(--toggle-btn-border);
+    color: var(--toggle-btn-color);
+    /* Tailwind handles size, shape, flex, items-center, justify-center, rounded-full */
     cursor: pointer;
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
-    font-size: 0.875rem; /* text-sm in Tailwind */
+    /* font-size is handled by Tailwind text-lg class in HTML */
 }
 .btn-toggle:hover {
-    background-color: rgba(128, 128, 128, 0.4);
+    background-color: rgba(128, 128, 128, 0.3); /* Slightly darker hover */
 }
 .btn-toggle.active {
-     background-color: white;
-     color: var(--dark-color); /* Dark text in light active state */
-     border-color: white;
-     font-weight: bold;
+     background-color: var(--toggle-btn-active-bg);
+     color: var(--toggle-btn-active-color);
+     border-color: var(--toggle-btn-active-bg); /* Border matches background when active */
 }
-body.dark-mode .btn-toggle {
-     color: #e0e0e0; /* Light text in dark mode toggles */
-     border-color: rgba(255, 255, 255, 0.3);
-     background-color: rgba(128, 128, 128, 0.1);
-}
-body.dark-mode .btn-toggle.active {
-     background-color: var(--primary-color); /* Accent color for active in dark mode */
-     color: var(--bg-color); /* Text color that contrasts with primary */
-     border-color: var(--primary-color);
-}
+/* No need for dark-mode specific .btn-toggle rules here, as variables handle it */
 
 
-/* --- RTL Styles for Arabic Language (Applied when body has 'rtl' class) --- */
-/* These styles will be used by index-ar.html which has body.rtl */
-body.rtl {
-    direction: rtl;
-    text-align: right;
-}
+/* --- Responsive Adjustments (Fine-tuning CSS after Tailwind) --- */
 
-body.rtl .container {
-    /* Adjust layout if needed, although Tailwind's flex/grid handle RTL well */
-}
+/* Center testimonial flex items on mobile */
+@media (max-width: 767px) { /* Below md breakpoint */
+     .testimonial-card .flex {
+         justify-content: center;
+         text-align: center; /* Center text below image */
+         flex-direction: column; /* Stack image and text vertically */
+         align-items: center;
+     }
+      .testimonial-card .flex img {
+         margin-right: 0; /* Remove right margin */
+         margin-bottom: 1rem; /* Add bottom margin */
+     }
 
-body.rtl .max-w-2xl, body.rtl .max-w-3xl, body.rtl .max-w-4xl {
-     margin-left: auto;
-     margin-right: auto; /* Ensure centered blocks stay centered */
-}
-
-/* Adjust spacing for RTL */
-body.rtl .mr-4 { /* Tailwind class */
-    margin-right: 0 !important;
-    margin-left: 1rem !important;
-}
-body.rtl .ml-auto { /* Tailwind class */
-    margin-left: inherit !important;
-    margin-right: auto !important;
-}
-/* Adjust flexbox spacing utilities for RTL */
-body.rtl .space-x-6 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-    margin-right: calc(1.5rem * var(--tw-space-x-reverse)) !important;
-    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
-}
-body.rtl .space-x-4 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-    margin-right: calc(1rem * var(--tw-space-x-reverse)) !important;
-    margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse))) !important;
-}
-body.rtl .space-x-2 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 1;
-    margin-right: calc(0.5rem * var(--tw-space-x-reverse)) !important;
-    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
-}
-
-/* Adjust text alignment for specific elements if needed */
-body.rtl .text-center {
-     text-align: center !important; /* Keep centered */
-}
-body.rtl .text-left { /* Tailwind class */
-     text-align: right !important;
-}
-body.rtl .text-right { /* Tailwind class */
-     text-align: left !important;
-}
-body.rtl .text-lg-start { /* Bootstrap reminant if you used it */
-     text-align: right !important;
-}
-
-/* Adjust image float/margin in About section if you use float instead of grid/flex */
-/* body.rtl #about img {
-     float: right;
-     margin-left: 1.5rem;
-     margin-right: 0;
-} */
-
-
-/* --- Responsive Adjustments (Using CSS Media Queries for fine-tuning) --- */
-
-/* Example: Adjust spacing on smaller screens */
-@media (max-width: 767px) {
-    #hero .text-center {
-        text-align: center !important;
-    }
-    #hero .btn-primary, #hero .btn-secondary {
-        display: block; /* Stack buttons */
+    /* Stack hero buttons */
+     #hero .btn-primary, #hero .btn-secondary {
+        display: block;
         width: 100%;
         margin-right: 0 !important;
         margin-left: 0 !important;
         margin-bottom: 1rem;
     }
-     /* Center testimonial content in mobile */
-     .testimonial-card .justify-center, .testimonial-card .justify-start {
-        justify-content: center !important;
+     /* Remove bottom margin from last hero button */
+     #hero .btn-secondary:last-child {
+         margin-bottom: 0 !important;
      }
+
+     /* Center footer sections on mobile */
+     footer .md\:text-left { text-align: center; }
+     footer .md\:text-right { text-align: center; }
+     footer .md\:mx-0 { margin-left: auto !important; margin-right: auto !important;}
+     footer .md\:max-w-none { max-width: none; }
+     footer .md\:mx-auto { margin-left: auto !important; margin-right: auto !important;}
+     footer .justify-center { justify-content: center; }
+     footer .md\:justify-end { justify-content: center; }
 }
 
-/* Example: Adjust font size on very small screens */
+
+/* Adjust section padding on smaller screens */
+@media (max-width: 639px) { /* Below sm breakpoint */
+    .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+    .lg\:py-24 { padding-top: 4rem; padding-bottom: 4rem; }
+    .px-4 { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* Example: Adjust hero title size on very small screens */
 @media (max-width: 480px) {
-    h1.text-5xl {
-        font-size: 2.5rem !important; /* Smaller hero title */
-    }
-    h2.text-4xl {
-        font-size: 2rem !important; /* Smaller section titles */
-    }
-    .text-xl {
-        font-size: 1.125rem !important; /* Standard text-lg in Tailwind */
-    }
+    h1.text-5xl { font-size: 2.5rem !important; }
+    h2.text-4xl { font-size: 2rem !important; }
+    .text-xl { font-size: 1.125rem !important; }
+    .text-lg { font-size: 1rem !important; }
 }
 
-/* Add more specific responsive rules here if needed */
 
+/* Hide scrollbar for aesthetic purposes (optional) */
+/* body {
+  -ms-overflow-style: none; // IE and Edge
+  scrollbar-width: none; // Firefox
+}
+body::-webkit-scrollbar {
+  display: none; // Chrome, Safari, Opera
+} */
+
+/* Style the scroll-to-top button if you add one */
+/* .scroll-to-top { ... } */
 
