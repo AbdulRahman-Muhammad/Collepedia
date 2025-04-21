@@ -1,0 +1,6 @@
+User-agent: *
+
+Allow: /*
+Disallow: /api/*
+
+Sitemap: https://www.collepedia.zone.id/sitemap.xml
