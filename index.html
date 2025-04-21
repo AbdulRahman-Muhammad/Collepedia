@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collepedia Media Agency</title>
-    <meta name="description" content="Official website for Collepedia Media Agency, featuring innovative media solutions, content creation, and strategic communication. Discover our blog, news, and network.">
-    <meta name="keywords" content="Collepedia, Media Agency, Blog, News, Marketing, Content Creation, Communication, Digital Marketing, Public Relations, Advertising, Dark Mode">
+    <title>Collepedia Media Agency - Innovative Media Solutions</title>
+    <meta name="description" content="Collepedia Media Agency offers innovative media solutions, expert content creation, strategic digital marketing, graphic design, web development, and public relations. Partner with us for impactful communication.">
+    <meta name="keywords" content="Collepedia, Media Agency, Content Creation, Digital Marketing, Graphic Design, Web Development, Public Relations, Strategic Communication, Advertising, Branding, Dark Mode, Responsive Website">
     <meta name="author" content="Collepedia Media Agency">
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -21,24 +21,20 @@
     </head>
 <body class="antialiased transition-colors duration-300 ease-in-out">
 
-    <div class="fixed top-4 left-4 z-50 flex items-center space-x-4">
-        <div class="language-toggle">
-            <a href="index-ar.html" class="btn-toggle">AR</a>
-            <a href="index.html" class="btn-toggle active">EN</a>
-        </div>
-        <div class="mode-toggle">
-            <button id="mode-toggle" class="btn-toggle text-lg">
-                 <i class="fas fa-sun" id="mode-icon"></i> </button>
-        </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <div class="fixed top-4 left-4 z-50 mode-toggle">
+        <button id="mode-toggle" class="btn-toggle text-lg w-10 h-10 flex items-center justify-center rounded-full">
+             <i class="fas fa-sun" id="mode-icon"></i> </button>
     </div>
 
-
-    <nav class="fixed top-0 left-0 right-0 z-40 bg-dark-navbar transition-colors duration-300 ease-in-out shadow-md">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-dark-navbar transition-colors duration-300 ease-in-out shadow-md py-3">
+        <div class="container mx-auto px-4 flex justify-between items-center">
             <a class="flex items-center" href="#hero">
                 <img src="img/logo.png" alt="Collepedia Logo" class="h-10" data-aos="zoom-in">
             </a>
-            <div class="flex space-x-6">
+
+            <div class="hidden lg:flex space-x-6">
                  <a class="nav-link" href="#hero">Home</a>
                  <a class="nav-link" href="#about">About Us</a>
                  <a class="nav-link" href="#services">Services</a>
@@ -47,157 +43,195 @@
                  <a class="nav-link" href="#clients">Clients</a>
                  <a class="nav-link" href="#contact">Contact</a>
             </div>
+
+             <button id="mobile-menu-button" class="lg:hidden focus:outline-none text-white text-2xl">
+                 <i class="fas fa-bars"></i>
+             </button>
+        </div>
+
+         <div id="mobile-menu" class="lg:hidden fixed top-0 right-0 w-64 h-full bg-dark-navbar z-50 transform translate-x-full transition-transform ease-in-out duration-300 shadow-lg p-6">
+            <div class="flex justify-end mb-6">
+                 <button id="close-mobile-menu" class="text-white text-2xl focus:outline-none">
+                    <i class="fas fa-times"></i>
+                 </button>
+            </div>
+            <ul class="flex flex-col space-y-4">
+                 <li><a class="nav-link-mobile" href="#hero">Home</a></li>
+                 <li><a class="nav-link-mobile" href="#about">About Us</a></li>
+                 <li><a class="nav-link-mobile" href="#services">Services</a></li>
+                 <li><a class="nav-link-mobile" href="#why-us">Why Choose Us</a></li>
+                 <li><a class="nav-link-mobile" href="#sites">Our Sites</a></li>
+                 <li><a class="nav-link-mobile" href="#clients">Clients</a></li>
+                 <li><a class="nav-link-mobile" href="#contact">Contact</a></li>
+            </ul>
              </div>
     </nav>
 
     <header id="hero" class="bg-hero text-white min-h-screen flex items-center py-24 relative overflow-hidden transition-colors duration-300 ease-in-out">
          <div class="absolute inset-0 bg-overlay z-10"></div>
-         <div class="container mx-auto px-4 relative z-20 text-center max-w-4xl">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4" data-aos="fade-up">Collepedia Media Agency</h1>
-             <p class="text-xl md:text-2xl mb-8">We offer <span id="typed-output"></span></p>
-             <p class="text-lg md:text-xl mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
-                 Your partner for cutting-edge media solutions, from strategic communication to compelling content creation and digital presence management.
+         <div class="container mx-auto px-4 relative z-20 text-center max-w-5xl">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-4" data-aos="fade-up" data-aos-duration="1000">Collepedia Media Agency</h1>
+             <p class="text-xl md:text-2xl lg:text-3xl mb-6">We offer <span id="typed-output"></span></p>
+             <p class="text-lg md:text-xl mb-12 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+                 Your trusted partner for cutting-edge media solutions. We blend creativity with strategy to deliver impactful content, build robust digital presences, and navigate the ever-evolving media landscape for businesses and individuals seeking to make a mark.
              </p>
-             <div data-aos="fade-up" data-aos-delay="400">
-                <a href="#sites" class="btn-primary mr-4">Explore Our Sites</a>
-                <a href="#services" class="btn-secondary">Our Services</a>
+             <div data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <a href="#sites" class="btn-primary mr-4 md:mr-6">Explore Our Network</a>
+                <a href="#contact" class="btn-secondary">Get Started</a>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+    <section id="about" class="py-16 lg:py-24 bg-light-section transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">About Collepedia</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">About Collepedia</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-                <div data-aos="fade-right">
-                    <img src="img/about-image.jpg" alt="About Collepedia" class="rounded-lg shadow-lg"> </div>
-                <div data-aos="fade-left">
-                    <p class="text-lg mb-4">
-                        Founded on the principles of innovation and impact, Collepedia Media Agency is dedicated to empowering businesses and individuals through strategic media engagement.
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <img src="img/about-image.jpg" alt="Collepedia Team Collaboration" class="rounded-lg shadow-lg w-full h-auto object-cover"> </div>
+                <div data-aos="fade-left" data-aos-duration="1000">
+                    <p class="text-lg mb-4 leading-relaxed">
+                        Founded in [Year] on the principles of innovation, integrity, and measurable impact, Collepedia Media Agency has grown into a leading provider of comprehensive media services. We are passionate about helping our clients tell their stories effectively and connect with their audiences in meaningful ways.
                     </p>
-                    <p class="mb-4">
-                        Our team of experts brings together diverse skills in journalism, digital marketing, graphic design, and web development to provide holistic solutions that resonate with your target audience. We believe in the power of compelling narratives and the reach of digital platforms to create meaningful connections.
+                    <p class="mb-4 leading-relaxed">
+                        Our diverse team comprises seasoned professionals from various media backgrounds, including award-winning journalists, digital marketing strategists, creative graphic designers, skilled web developers, and experienced PR specialists. This multidisciplinary approach allows us to offer integrated solutions that address all aspects of your media needs.
                     </p>
-                    <p>
-                         Whether you need to craft a powerful message, build a strong online presence, or navigate the complex media landscape, Collepedia is your trusted partner every step of the way.
+                    <p class="leading-relaxed">
+                         We pride ourselves on our collaborative process, working closely with each client to understand their unique challenges and objectives. This partnership ensures that our strategies are not only creative and innovative but also deeply aligned with your goals, delivering tangible results that drive growth and enhance your reputation.
                     </p>
+                    <a href="#contact" class="btn-primary mt-6 inline-block">Learn More & Get in Touch</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="services" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
+    <section id="services" class="py-16 lg:py-24 bg-dark-section transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Our Services</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Our Expert Services</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
-                    <i class="fas fa-pencil-alt text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Content Creation & Strategy</h5>
-                    <p>Crafting engaging articles, reports, social media content, and developing effective content strategies that speak to your audience.</p>
+                <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <i class="fas fa-feather-alt text-primary-color text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3 text-heading-color">Content Creation & Strategy</h5>
+                    <p class="text-text-color leading-relaxed">From compelling articles and engaging blog posts to high-impact social media copy and detailed reports, we craft content that captures attention and drives action. We also develop robust content strategies aligned with your brand voice and marketing objectives.</p>
                 </div>
-                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
-                    <i class="fas fa-bullhorn text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Digital Marketing</h5>
-                    <p>SEO, social media marketing, email campaigns, and online advertising to boost your visibility and reach.</p>
+                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <i class="fas fa-chart-bar text-primary-color text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3 text-heading-color">Digital Marketing Excellence</h5>
+                    <p class="text-text-color leading-relaxed">Unlock your online potential with our comprehensive digital marketing services, including advanced SEO techniques, targeted social media campaigns, effective email marketing, and data-driven online advertising strategies designed to maximize your ROI.</p>
                 </div>
-                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="300">
-                    <i class="fas fa-paint-brush text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Graphic Design & Branding</h5>
-                    <p>Creating impactful logos, visual identities, marketing materials, and graphics that capture attention.</p>
+                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                    <i class="fas fa-vector-square text-primary-color text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3 text-heading-color">Graphic Design & Visual Branding</h5>
+                    <p class="text-text-color leading-relaxed">We create stunning visual assets that represent your brand identity. Our services cover everything from logo design and branding guides to marketing collateral, infographics, social media graphics, and presentations that leave a lasting impression.</p>
                 </div>
-                <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="150">
-                    <i class="fas fa-globe text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Web Development & Design</h5>
-                    <p>Building modern, responsive, and user-friendly websites tailored to your needs and brand identity.</p>
+                <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="400" data-aos-duration="800">
+                    <i class="fas fa-code text-primary-color text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3 text-heading-color">Web Development & UI/UX Design</h5>
+                    <p class="text-text-color leading-relaxed">Get a powerful online presence with our custom web development and design services. We build responsive, fast, and user-friendly websites and web applications focusing on intuitive navigation and exceptional user experience (UI/UX).</p>
                 </div>
-                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="250">
-                    <i class="fas fa-video text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Video Production & Editing</h5>
-                    <p>Producing high-quality video content for marketing, social media, and corporate communications.</p>
+                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="500" data-aos-duration="800">
+                    <i class="fas fa-film text-primary-color text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3 text-heading-color">Video & Multimedia Production</h5>
+                    <p class="text-text-color leading-relaxed">Bring your story to life with captivating video and multimedia content. Our production services include concept development, filming, editing, animation, and sound design for marketing videos, corporate profiles, social media clips, and more.</p>
                 </div>
-                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="350">
-                    <i class="fas fa-comments text-primary-color text-5xl mb-6"></i>
-                    <h5 class="text-xl font-semibold mb-3 text-heading-color">Public Relations</h5>
-                    <p>Managing your public image, media relations, and crisis communication strategies.</p>
+                 <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="600" data-aos-duration="800">
+                    <i class="fas fa-bullhorn text-primary-color text-5xl mb-6"></i> <h5 class="text-xl font-semibold mb-3 text-heading-color">Public Relations & Reputation</h5>
+                    <p class="text-text-color leading-relaxed">Manage and enhance your public image with our expert PR services. We handle media relations, press release distribution, public affairs, crisis communication, and strategies to build and maintain a positive reputation for your brand or personal profile.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="why-us" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+    <section id="why-us" class="py-16 lg:py-24 bg-light-section transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Why Choose Collepedia?</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-                <div data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon-box mb-6">
-                        <i class="fas fa-lightbulb text-primary-color text-5xl"></i>
-                    </div>
-                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Innovation</h4>
-                    <p>We stay ahead of media trends to bring you fresh and effective strategies.</p>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">Why Partner with Collepedia?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 text-center">
+                <div data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                    <div class="icon-box mb-6 p-4 inline-block rounded-full bg-primary-color bg-opacity-10"> <i class="fas fa-rocket text-primary-color text-4xl"></i> </div>
+                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Driven by Innovation</h4>
+                    <p class="text-text-color leading-relaxed">We constantly explore new trends and technologies to ensure our clients benefit from the most effective and forward-thinking media strategies available.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon-box mb-6">
-                         <i class="fas fa-handshake text-primary-color text-5xl"></i>
-                    </div>
-                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Partnership</h4>
-                    <p>We work closely with you to understand your goals and deliver tailored solutions.</p>
+                <div data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                    <div class="icon-box mb-6 p-4 inline-block rounded-full bg-primary-color bg-opacity-10">
+                         <i class="fas fa-users text-primary-color text-4xl"></i> </div>
+                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Client-Centric Approach</h4>
+                    <p class="text-text-color leading-relaxed">Your success is our priority. We build strong, collaborative relationships, tailoring our services precisely to your unique needs and objectives for maximum impact.</p>
                 </div>
-                <div data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon-box mb-6">
-                        <i class="fas fa-chart-line text-primary-color text-5xl"></i>
-                    </div>
-                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Results</h4>
-                    <p>Our focus is on delivering measurable impact and helping you achieve success.</p>
+                <div data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                    <div class="icon-box mb-6 p-4 inline-block rounded-full bg-primary-color bg-opacity-10">
+                        <i class="fas fa-trophy text-primary-color text-4xl"></i> </div>
+                    <h4 class="text-2xl font-semibold mb-3 text-heading-color">Commitment to Results</h4>
+                    <p class="text-text-color leading-relaxed">We are focused on delivering measurable outcomes. Our strategies are designed to achieve tangible results, helping you grow your audience, enhance your brand, and meet your business goals.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="sites" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
+    <section id="sites" class="py-16 lg:py-24 bg-dark-section transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Explore Our Network</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Explore Our Network</h2>
+            <p class="text-center text-lg max-w-2xl mx-auto mb-12 text-text-color" data-aos="fade-up" data-aos-delay="100">
+                 Collepedia is more than just an agency; we are a network of platforms dedicated to sharing knowledge and connecting with the media landscape.
+            </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card p-6 text-center" data-aos="zoom-in">
+                <div class="card p-6 text-center" data-aos="zoom-in" data-aos-duration="800">
                      <i class="fas fa-blog text-red-600 text-5xl mb-6"></i>
                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Colle-pedia Blogspot</h5>
-                    <p class="mb-4 text-text-color">Dive into a wide range of articles and insights from our community.</p>
+                    <p class="mb-4 text-text-color leading-relaxed">Dive into a wide range of insightful articles, opinion pieces, and diverse topics contributed by our community and experts.</p>
                     <a href="https://colle-pedia.blogspot.com" class="btn-outline mt-auto" target="_blank">Visit Site</a>
                 </div>
-                <div class="card p-6 text-center" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card p-6 text-center" data-aos="zoom-in" data-aos-delay="100" data-aos-duration="800">
                     <i class="fas fa-globe text-green-600 text-5xl mb-6"></i>
                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Collepedia In</h5>
-                    <p class="mb-4 text-text-color">... (Description for Collepedia In) ... Explore global perspectives and analyses.</p>
+                    <p class="mb-4 text-text-color leading-relaxed">... (Description for Collepedia In). Explore global perspectives, in-depth analyses, and specialized content related to [Collepedia In's Focus].</p>
                     <a href="#" class="btn-outline mt-auto" target="_blank">Visit Site</a> </div>
-                <div class="card p-6 text-center" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card p-6 text-center" data-aos="zoom-in" data-aos-delay="200" data-aos-duration="800">
                     <i class="fas fa-newspaper text-blue-600 text-5xl mb-6"></i>
                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Collepedia News</h5>
-                    <p class="mb-4 text-text-color">Stay updated with the latest news and developments curated by Collepedia.</p>
+                    <p class="mb-4 text-text-color leading-relaxed">Stay updated with the latest news, trends, and developments across the media industry and beyond, curated and reported by Collepedia News.</p>
                      <a href="#" class="btn-outline mt-auto" target="_blank">Visit Site</a> </div>
             </div>
         </div>
     </section>
 
-     <section id="testimonials" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+    <section id="clients" class="py-16 lg:py-24 bg-light-section transition-colors duration-300 ease-in-out">
+         <div class="container mx-auto px-4">
+             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">Our Valued Clients</h2>
+             <p class="text-center text-lg max-w-2xl mx-auto mb-12 text-text-color" data-aos="fade-up" data-aos-delay="100">
+                 We are proud to have partnered with a diverse range of clients, helping them achieve their media and communication objectives.
+             </p>
+             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-center">
+                 <div class="p-4" data-aos="zoom-in" data-aos-delay="100">
+                     <img src="img/client-logo-1.png" alt="Client Logo 1" class="mx-auto max-h-12 opacity-60 hover:opacity-100 transition-opacity duration-300"> </div>
+                 <div class="p-4" data-aos="zoom-in" data-aos-delay="150">
+                     <img src="img/client-logo-2.png" alt="Client Logo 2" class="mx-auto max-h-12 opacity-60 hover:opacity-100 transition-opacity duration-300"> </div>
+                  <div class="p-4" data-aos="zoom-in" data-aos-delay="200">
+                     <img src="img/client-logo-3.png" alt="Client Logo 3" class="mx-auto max-h-12 opacity-60 hover:opacity-100 transition-opacity duration-300"> </div>
+                  <div class="p-4" data-aos="zoom-in" data-aos-delay="250">
+                     <img src="img/client-logo-4.png" alt="Client Logo 4" class="mx-auto max-h-12 opacity-60 hover:opacity-100 transition-opacity duration-300"> </div>
+                 </div>
+         </div>
+     </section>
+
+
+     <section id="testimonials" class="py-16 lg:py-24 bg-dark-section transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">What Our Clients Say</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">What Our Clients Say</h2>
+             <p class="text-center text-lg max-w-2xl mx-auto mb-12 text-text-color" data-aos="fade-up" data-aos-delay="100">
+                 Hear directly from those who have experienced the Collepedia difference. Their success stories are our greatest testament.
+            </p>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="testimonial-card p-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
                     <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
-                    <p class="text-lg italic mb-4 text-text-color">"Collepedia transformed our online presence. Their content strategy was a game-changer!"</p>
-                    <div class="flex items-center justify-center md:justify-start">
-                         <img src="img/client1.png" alt="Client Name" class="w-12 h-12 rounded-full mr-4"> <div>
-                             <p class="font-semibold text-heading-color">- Client Name</p>
-                             <p class="text-sm text-text-color">Company A</p>
+                    <p class="text-lg italic mb-6 text-text-color leading-relaxed">"Collepedia didn't just meet our expectations; they exceeded them. Their strategic approach to content and marketing significantly boosted our visibility and engagement. A truly valuable partnership!"</p>
+                    <div class="flex items-center">
+                         <img src="img/testimonial-avatar-1.jpg" alt="Client Avatar 1" class="w-14 h-14 rounded-full mr-4 object-cover"> <div>
+                             <p class="font-semibold text-heading-color">- Jane Doe</p>
+                             <p class="text-sm text-text-color">Marketing Director, Innovate Solutions</p>
                          </div>
                     </div>
                 </div>
-                 <div class="testimonial-card p-6" data-aos="fade-up" data-aos-delay="200">
+                 <div class="testimonial-card p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
                     <i class="fas fa-quote-left text-primary-color text-3xl mb-4"></i>
-                    <p class="text-lg italic mb-4 text-text-color">"The graphic design work was exceptional, and their digital marketing boosted our leads significantly."</p>
-                    <div class="flex items-center justify-center md:justify-start">
-                         <img src="img/client2.png" alt="Client Name" class="w-12 h-12 rounded-full mr-4"> <div>
-                             <p class="font-semibold text-heading-color">- Client Name</p>
-                             <p class="text-sm text-text-color">Company B</p>
+                    <p class="text-lg italic mb-6 text-text-color leading-relaxed">"The team at Collepedia is exceptional. Their graphic design work captured our brand perfectly, and the seamless web development process made our new site launch a breeze. Highly recommended for any media needs."</p>
+                    <div class="flex items-center">
+                         <img src="img/testimonial-avatar-2.jpg" alt="Client Avatar 2" class="w-14 h-14 rounded-full mr-4 object-cover"> <div>
+                             <p class="font-semibold text-heading-color">- John Smith</p>
+                             <p class="text-sm text-text-color">CEO, Global Ventures</p>
                          </div>
                     </div>
                 </div>
@@ -205,50 +239,89 @@
         </div>
     </section>
 
-     <section id="blog-news" class="py-16 bg-dark-section transition-colors duration-300 ease-in-out">
+     <section id="blog-news" class="py-16 lg:py-24 bg-light-section transition-colors duration-300 ease-in-out">
          <div class="container mx-auto px-4">
-             <h2 class="text-4xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Latest Insights</h2>
-             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                 <div class="card p-6" data-aos="fade-up" data-aos-delay="100">
-                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Understanding SEO Trends in 2025</h5>
-                     <p class="text-sm text-text-color mb-4">A brief look at the key shifts happening in search engine optimization this year...</p>
-                     <a href="https://colle-pedia.blogspot.com/link-to-article-1" class="text-primary-color hover:underline">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+             <h2 class="text-4xl md:text-5xl font-bold text-center mb-12" data-aos="fade-up">Latest Insights from Our Network</h2>
+             <p class="text-center text-lg max-w-2xl mx-auto mb-12 text-text-color" data-aos="fade-up" data-aos-delay="100">
+                 Stay informed with the latest articles and news from Colle-pedia Blogspot and Collepedia News.
+             </p>
+             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                 <div class="card p-6" data-aos="fade-up" data-aos-delay="100" data-aos-duration="800">
+                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Understanding AI's Impact on Content Creation</h5>
+                     <p class="text-sm text-text-color mb-4 leading-relaxed">Explore how artificial intelligence is reshaping the landscape of content generation and strategy, and what it means for the future of media agencies...</p>
+                     <a href="https://colle-pedia.blogspot.com/link-to-article-1" class="text-primary-color hover:underline mt-auto inline-block">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                  </div>
-                  <div class="card p-6" data-aos="fade-up" data-aos-delay="200">
-                     <h5 class="text-xl font-semibold mb-3 text-heading-color">The Power of Visual Storytelling</h5>
-                     <p class="text-sm text-text-color mb-4">How compelling visuals can elevate your brand's message and connect with your audience...</p>
-                     <a href="https://colle-pedia.blogspot.com/link-to-article-2" class="text-primary-color hover:underline">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                  <div class="card p-6" data-aos="fade-up" data-aos-delay="200" data-aos-duration="800">
+                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Building a Resilient Brand in a Digital Age</h5>
+                     <p class="text-sm text-text-color mb-4 leading-relaxed">Learn the key strategies for establishing and maintaining a strong, resilient brand presence in today's fast-paced digital environment...</p>
+                     <a href="https://colle-pedia.blogspot.com/link-to-article-2" class="text-primary-color hover:underline mt-auto inline-block">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                  </div>
-                  <div class="card p-6" data-aos="fade-up" data-aos-delay="300">
-                     <h5 class="text-xl font-semibold mb-3 text-heading-color">Navigating Social Media Algorithms</h5>
-                     <p class="text-sm text-text-color mb-4">Key strategies to ensure your content gets seen in the ever-changing social media landscape...</p>
-                     <a href="https://colle-pedia.blogspot.com/link-to-article-3" class="text-primary-color hover:underline">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
+                  <div class="card p-6" data-aos="fade-up" data-aos-delay="300" data-aos-duration="800">
+                     <h5 class="text-xl font-semibold mb-3 text-heading-color">The Importance of Visual Storytelling in Marketing</h5>
+                     <p class="text-sm text-text-color mb-4 leading-relaxed">Discover why visuals are more critical than ever in marketing and how effective visual storytelling can captivate your audience...</p>
+                     <a href="https://colle-pedia.blogspot.com/link-to-article-3" class="text-primary-color hover:underline mt-auto inline-block">Read More <i class="fas fa-arrow-right text-sm ml-1"></i></a>
                  </div>
-             </div>
-             <div class="text-center mt-12" data-aos="fade-up">
-                 <a href="https://colle-pedia.blogspot.com" class="btn-primary-outline">Visit Our Blog for More</a> </div>
+                 </div>
+             <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="800">
+                 <a href="https://colle-pedia.blogspot.com" class="btn-primary-outline">Visit Our Blog for More Insights</a> </div>
          </div>
      </section>
 
 
-     <section id="contact" class="py-16 bg-light-section transition-colors duration-300 ease-in-out">
+     <section id="contact" class="py-16 lg:py-24 bg-dark-section transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12" data-aos="fade-up">Get In Touch</h2>
-            <div class="max-w-2xl mx-auto text-center">
-                <p class="text-lg mb-8 text-text-color">Ready to start your next media project? Contact us today to discuss how Collepedia Media Agency can help you achieve your goals.</p>
-                <div class="flex justify-center space-x-6 text-heading-color mb-8">
-                     <a href="mailto:info@collepedia.com" class="hover:text-primary-color transition-colors duration-300"><i class="fas fa-envelope text-4xl"></i></a> <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-facebook text-4xl"></i></a> <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-twitter text-4xl"></i></a>  <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-linkedin text-4xl"></i></a> </div>
-                 <p class="text-lg text-text-color">Email: <a href="mailto:info@collepedia.com" class="text-primary-color hover:underline">info@collepedia.com</a> (Example)</p>
-                 <p class="text-lg text-text-color">Phone: +123 456 7890 (Example)</p>
-                 </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-heading-color" data-aos="fade-up">Get In Touch</h2>
+            <div class="max-w-3xl mx-auto text-center">
+                <p class="text-lg mb-8 text-text-color leading-relaxed">
+                    Ready to elevate your media presence? We'd love to hear from you and discuss how Collepedia Media Agency can tailor solutions to meet your specific needs and help you achieve your communication goals. Reach out today!
+                </p>
+                 <p class="text-xl font-semibold text-heading-color mb-4">Contact Information:</p>
+                <p class="text-lg text-text-color mb-2"><i class="fas fa-envelope mr-2 text-primary-color"></i> Email: <a href="mailto:info@collepedia.com" class="text-primary-color hover:underline">info@collepedia.com</a> (Example)</p>
+                <p class="text-lg text-text-color mb-6"><i class="fas fa-phone mr-2 text-primary-color"></i> Phone: +123 456 7890 (Example)</p>
+
+                <p class="text-xl font-semibold text-heading-color mb-4">Follow Us:</p>
+                <div class="flex justify-center space-x-6 text-heading-color">
+                     <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-facebook text-3xl"></i></a> <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-twitter text-3xl"></i></a>  <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-linkedin text-3xl"></i></a> <a href="#" class="hover:text-primary-color transition-colors duration-300"><i class="fab fa-instagram text-3xl"></i></a> </div>
+            </div>
         </div>
     </section>
 
     <footer class="bg-dark-footer text-white text-center py-8 transition-colors duration-300 ease-in-out">
         <div class="container mx-auto px-4">
-            <p class="text-sm text-footer-text">&copy; 2024 Collepedia Media Agency. All rights reserved.</p>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                 <div class="text-center md:text-left">
+                     <img src="img/logo.png" alt="Collepedia Logo" class="h-10 mx-auto md:mx-0 mb-4 opacity-80">
+                     <p class="text-sm text-footer-text leading-relaxed max-w-xs md:max-w-none mx-auto md:mx-0">
+                         Collepedia Media Agency is your partner for impactful communication, blending innovation, strategy, and creativity.
+                     </p>
+                 </div>
+                 <div class="text-center">
+                     <h5 class="text-lg font-semibold mb-4 text-white">Quick Links</h5>
+                     <ul class="space-y-2 text-sm text-footer-text">
+                         <li><a href="#about" class="hover:text-white transition-colors duration-300">About Us</a></li>
+                         <li><a href="#services" class="hover:text-white transition-colors duration-300">Services</a></li>
+                         <li><a href="#sites" class="hover:text-white transition-colors duration-300">Our Network</a></li>
+                         <li><a href="#contact" class="hover:text-white transition-colors duration-300">Contact</a></li>
+                     </ul>
+                 </div>
+                 <div class="text-center md:text-right">
+                      <h5 class="text-lg font-semibold mb-4 text-white">Contact</h5>
+                      <p class="text-sm text-footer-text mb-2">Email: <a href="mailto:info@collepedia.com" class="hover:text-white transition-colors duration-300">info@collepedia.com</a></p>
+                      <p class="text-sm text-footer-text mb-4">Phone: +123 456 7890</p>
+                       <div class="flex justify-center md:justify-end space-x-4">
+                            <a href="#" class="text-footer-text hover:text-white transition-colors duration-300"><i class="fab fa-facebook text-xl"></i></a>
+                            <a href="#" class="text-footer-text hover:text-white transition-colors duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-footer-text hover:text-white transition-colors duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-footer-text hover:text-white transition-colors duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                       </div>
+                 </div>
+             </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-sm text-footer-text">
+                 <p>&copy; 2024 Collepedia Media Agency. All rights reserved.</p>
+            </div>
         </div>
     </footer>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLjwtAuH0+tt1xt6wuKtqaVCbLessBcifqiRvcLGroTz5RqX9Vbwu+LcFXgtDnKUqHRdlLdPdo3erQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -259,27 +332,20 @@
     <script src="js/script.js"></script>
 
     <script>
-        // NOTE: Library initializations and main script logic
-        // are now in js/script.js
+        // NOTE: Library initializations, mode toggle, mobile menu toggle,
+        // and smooth scrolling are handled by js/script.js
+        // Look at js/script.js for the main JS logic.
 
-        // --- Smooth Scrolling for internal links (Can be moved to script.js) ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    // Adjust scroll position to account for fixed navbar
-                    const navbarHeight = document.querySelector('nav').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - navbarHeight;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
+        // Optional: Add a class to the navbar on scroll for styling
+        // const navbar = document.getElementById('navbar');
+        // window.addEventListener('scroll', () => {
+        //     if (window.scrollY > 50) {
+        //         navbar.classList.add('scrolled');
+        //     } else {
+        //         navbar.classList.remove('scrolled');
+        //     }
+        // });
+        // Add '.scrolled' styles in css/style.css
     </script>
 
 </body>
