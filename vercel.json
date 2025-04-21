@@ -9,11 +9,7 @@
   "routes": [
     {
       "src": "/news",
-      "dest": "api/news.py"
-    },
-    {
-      "src": "/(.*)", 
-      "dest": "/$1"
+      "dest": "api/news"
     }
   ]
 }
