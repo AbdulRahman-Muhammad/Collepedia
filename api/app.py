@@ -129,7 +129,7 @@ def root_index():
         return "Error: index.html not found in project root", 404
 
 @app.route('/app')
-def root_index():
+def app_index():
     try:
         return send_from_directory(app.static_folder, 'app.html')
     except FileNotFoundError:
