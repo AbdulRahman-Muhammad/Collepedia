@@ -5,22 +5,15 @@ import re
 import feedparser
 import httpx
 from flask import Flask, jsonify, request, render_template, send_from_directory
-from flask_caching import Cache
 from datetime import datetime
 
 app = Flask(__name__,
             static_folder='../',
             template_folder='../templates')
-app.config["CACHE_TYPE"] = "SimpleCache"
-app.config["CACHE_DEFAULT_TIMEOUT"] = 300
-cache = Cache(app)
-
 # Source: The Guardian World RSS
 THE_GUARDIAN_FEED = "https://www.theguardian.com/world/rss"
-
 # كلمات محظورة لتصفية الأخبار
 BANNED_KEYWORDS = ["israel", "occupation", "palestine"]
-
 def extract_image(entry):
     if "media_content" in entry:
         media = entry["media_content"]
@@ -123,12 +116,8 @@ async def get_articles():
     except ValueError:
         offset = 0
     country = request.args.get("country", "")
-    cache_key = f"collepedia_news_{country}"
-    articles = cache.get(cache_key)
-    if articles is None:
-        articles = await fetch_articles()
-        articles = filter_articles(articles, country)
-        cache.set(cache_key, articles)
+    articles = await fetch_articles()
+    articles = filter_articles(articles, country)
     result = articles[offset:offset+10]
     return jsonify(result)
 
@@ -139,6 +128,13 @@ def root_index():
     except FileNotFoundError:
         return "Error: index.html not found in project root", 404
 
+@app.route('/app')
+def root_index():
+    try:
+        return send_from_directory(app.static_folder, 'app.html')
+    except FileNotFoundError:
+        return "Error: app.html not found in project root", 404
+                
 @app.route('/<path:filename>')
 def serve_other_static(filename):
     try:
