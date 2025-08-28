@@ -1,3 +1,0 @@
-flask[async]
-feedparser
-httpx
