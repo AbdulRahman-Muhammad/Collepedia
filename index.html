@@ -200,20 +200,11 @@
     <script src="js/script.js"></script>
 
     <script>
-        // NOTE: Library initializations, mode toggle, mobile menu toggle,
-        // and smooth scrolling are handled by js/script.js
-        // Look at js/script.js for the main JS logic.
-
-        // Optional: Add a class to the navbar on scroll for styling
-        // const navbar = document.getElementById('navbar');
-        // window.addEventListener('scroll', () => {
-        //     if (window.scrollY > 50) {
-        //         navbar.classList.add('scrolled');
-        //     } else {
-        //         navbar.classList.remove('scrolled');
-        //     }
-        // });
-        // Add '.scrolled' styles in css/style.css
+  // نتأكد إن المستخدم على الدومين القديم
+  if (window.location.hostname === "collepedia.zone.id") {
+    // نستخدم location.replace() بدل location.href عشان تكون 301-like
+    window.location.replace("https://app.collepedia.qzz.io" + window.location.pathname + window.location.search);
+  }
     </script>
 
 </body>
